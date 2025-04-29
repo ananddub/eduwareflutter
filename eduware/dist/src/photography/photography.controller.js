@@ -63,7 +63,6 @@ let PhotographyController = class PhotographyController {
         };
     }
     async getEvents() {
-        console.log('getEvents');
         return await this.photographyService.observeEvents();
     }
 };
@@ -146,7 +145,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], PhotographyController.prototype, "remove", null);
 __decorate([
-    (0, common_1.Sse)('stream'),
+    (0, common_1.Sse)('event'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)

@@ -4,7 +4,7 @@ import { UpdateAdmisionDto } from './dto/update-admision.dto';
 import { DRIZZLE_CLIENT } from 'src/constant';
 import { AnyMySql2Connection, MySql2Database } from 'drizzle-orm/mysql2';
 import { tblAdmission } from 'src/db/schema';
-import { eq, gte } from 'drizzle-orm';
+import { and, eq, gte } from 'drizzle-orm';
 
 @Injectable()
 export class AdmisionService {
@@ -18,11 +18,25 @@ export class AdmisionService {
         return 'This action adds a new admision';
     }
 
-    findAll(session: string = '2024-2025') {
+    findAll(
+        cl: string = 'X',
+        start: number = 0,
+        end: number = 30,
+        roll: number = -1,
+        session: string = '2024-2025',
+    ) {
         return this.db
             .select()
             .from(tblAdmission)
-            .where(eq(tblAdmission.session, session));
+            .where(
+                and(
+                    eq(tblAdmission.class, cl),
+                    eq(tblAdmission.session, session),
+                    gte(tblAdmission.roll, roll),
+                ),
+            )
+            .limit(end - start)
+            .offset(start);
     }
 
     findOne(id: string) {

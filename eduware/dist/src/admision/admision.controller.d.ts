@@ -5,7 +5,7 @@ export declare class AdmisionController {
     private readonly admisionService;
     constructor(admisionService: AdmisionService);
     create(createAdmisionDto: CreateAdmisionDto): string;
-    findAll(): Promise<{
+    findAll(cl?: string, session?: string, start?: number, end?: number, roll?: number): Promise<{
         status: number;
         message: string;
         data: {

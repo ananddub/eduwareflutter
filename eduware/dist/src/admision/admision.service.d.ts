@@ -7,7 +7,7 @@ export declare class AdmisionService {
         $client: AnyMySql2Connection;
     });
     create(createAdmisionDto: CreateAdmisionDto): string;
-    findAll(session?: string): Omit<import("drizzle-orm/mysql-core").MySqlSelectBase<"tbl_admission", {
+    findAll(cl?: string, start?: number, end?: number, roll?: number, session?: string): Omit<import("drizzle-orm/mysql-core").MySqlSelectBase<"tbl_admission", {
         regno: import("drizzle-orm/mysql-core").MySqlColumn<{
             name: "regno";
             tableName: "tbl_admission";
@@ -909,7 +909,7 @@ export declare class AdmisionService {
             identity: undefined;
             generated: undefined;
         }, {}, {}>;
-    }, "single", import("drizzle-orm/mysql2").MySql2PreparedQueryHKT, Record<"tbl_admission", "not-null">, false, "where", {
+    }, "single", import("drizzle-orm/mysql2").MySql2PreparedQueryHKT, Record<"tbl_admission", "not-null">, false, "limit" | "where" | "offset", {
         regno: string;
         admno: string;
         name: string;
@@ -1865,7 +1865,7 @@ export declare class AdmisionService {
             identity: undefined;
             generated: undefined;
         }, {}, {}>;
-    }>, "where">;
+    }>, "limit" | "where" | "offset">;
     findOne(id: string): Omit<import("drizzle-orm/mysql-core").MySqlSelectBase<"tbl_admission", {
         regno: import("drizzle-orm/mysql-core").MySqlColumn<{
             name: "regno";

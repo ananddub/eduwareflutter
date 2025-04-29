@@ -6,6 +6,7 @@ import {
     Patch,
     Param,
     Delete,
+    Query,
 } from '@nestjs/common';
 import { AdmisionService } from './admision.service';
 import { CreateAdmisionDto } from './dto/create-admision.dto';
@@ -21,7 +22,13 @@ export class AdmisionController {
     }
 
     @Get()
-    async findAll() {
+    async findAll(
+        @Query('class') cl: string = 'A',
+        @Query('session') session: string = '2024-2025',
+        @Query('start') start: number = 0,
+        @Query('end') end: number = 30,
+        @Query('roll') roll: number = -1,
+    ) {
         return {
             status: 200,
             message: 'success',

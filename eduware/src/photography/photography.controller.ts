@@ -134,10 +134,8 @@ export class PhotographyController {
         };
     }
 
-    @Sse('stream')
+    @Sse('event')
     async getEvents() {
-        console.log('getEvents');
         return await this.photographyService.observeEvents();
-        // return 'hello world';
     }
 }

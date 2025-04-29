@@ -10,7 +10,7 @@ import { HttpException, HttpStatus } from '@nestjs/common';
 
 @Injectable()
 export class PhotographyService {
-    private eventSubject = new Subject<any>(); // RxJS Subject to emit events
+    private eventSubject = new Subject<any>();
 
     constructor(
         @Inject(DRIZZLE_CLIENT)

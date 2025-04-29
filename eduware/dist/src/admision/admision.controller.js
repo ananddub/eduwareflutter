@@ -24,7 +24,7 @@ let AdmisionController = class AdmisionController {
     create(createAdmisionDto) {
         return this.admisionService.create(createAdmisionDto);
     }
-    async findAll() {
+    async findAll(cl = 'A', session = '2024-2025', start = 0, end = 30, roll = -1) {
         return {
             status: 200,
             message: 'success',
@@ -55,8 +55,13 @@ __decorate([
 ], AdmisionController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
+    __param(0, (0, common_1.Query)('class')),
+    __param(1, (0, common_1.Query)('session')),
+    __param(2, (0, common_1.Query)('start')),
+    __param(3, (0, common_1.Query)('end')),
+    __param(4, (0, common_1.Query)('roll')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [String, String, Number, Number, Number]),
     __metadata("design:returntype", Promise)
 ], AdmisionController.prototype, "findAll", null);
 __decorate([

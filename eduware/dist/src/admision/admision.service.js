@@ -24,11 +24,13 @@ let AdmisionService = class AdmisionService {
     create(createAdmisionDto) {
         return 'This action adds a new admision';
     }
-    findAll(session = '2024-2025') {
+    findAll(cl = 'X', start = 0, end = 30, roll = -1, session = '2024-2025') {
         return this.db
             .select()
             .from(schema_1.tblAdmission)
-            .where((0, drizzle_orm_1.eq)(schema_1.tblAdmission.session, session));
+            .where((0, drizzle_orm_1.and)((0, drizzle_orm_1.eq)(schema_1.tblAdmission.class, cl), (0, drizzle_orm_1.eq)(schema_1.tblAdmission.session, session), (0, drizzle_orm_1.gte)(schema_1.tblAdmission.roll, roll)))
+            .limit(end - start)
+            .offset(start);
     }
     findOne(id) {
         return this.db

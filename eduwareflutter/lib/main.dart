@@ -1,4 +1,4 @@
-import 'package:eduwareflutter/pages/photo.dart';
+import 'package:eduwareflutter/pages/photo/photo.dart';
 import 'package:flutter/material.dart';
 
 void main() {
