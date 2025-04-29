@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model tbl_photo {
+  id        Int    @id @default(autoincrement())
+  file      String
+  path      String
+  size      String
+  admission String
+}

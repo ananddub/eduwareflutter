@@ -1,0 +1,7196 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "",
+  "version": "5",
+  "dialect": "mysql",
+  "tables": {
+    "tbl_admcertinotes": {
+      "name": "tbl_admcertinotes",
+      "columns": {
+        "note1": {
+          "autoincrement": false,
+          "name": "note1",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note2": {
+          "autoincrement": false,
+          "name": "note2",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note3": {
+          "autoincrement": false,
+          "name": "note3",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note4": {
+          "autoincrement": false,
+          "name": "note4",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note5": {
+          "autoincrement": false,
+          "name": "note5",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note6": {
+          "autoincrement": false,
+          "name": "note6",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_admission": {
+      "name": "tbl_admission",
+      "columns": {
+        "regno": {
+          "autoincrement": false,
+          "name": "regno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "roll": {
+          "autoincrement": false,
+          "name": "roll",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "house": {
+          "autoincrement": false,
+          "name": "house",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "section": {
+          "autoincrement": false,
+          "name": "section",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dob": {
+          "autoincrement": false,
+          "name": "dob",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gender": {
+          "autoincrement": false,
+          "name": "gender",
+          "type": "varchar(6)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nationality": {
+          "autoincrement": false,
+          "name": "nationality",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "category": {
+          "autoincrement": false,
+          "name": "category",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "religion": {
+          "autoincrement": false,
+          "name": "religion",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "bloodgroup": {
+          "autoincrement": false,
+          "name": "bloodgroup",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fname": {
+          "autoincrement": false,
+          "name": "fname",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "foccu": {
+          "autoincrement": false,
+          "name": "foccu",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fannual": {
+          "autoincrement": false,
+          "name": "fannual",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fmob": {
+          "autoincrement": false,
+          "name": "fmob",
+          "type": "varchar(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mname": {
+          "autoincrement": false,
+          "name": "mname",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "moccu": {
+          "autoincrement": false,
+          "name": "moccu",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mannual": {
+          "autoincrement": false,
+          "name": "mannual",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mmob": {
+          "autoincrement": false,
+          "name": "mmob",
+          "type": "varchar(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gname": {
+          "autoincrement": false,
+          "name": "gname",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "goccu": {
+          "autoincrement": false,
+          "name": "goccu",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gannual": {
+          "autoincrement": false,
+          "name": "gannual",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "whatsapp": {
+          "autoincrement": false,
+          "name": "whatsapp",
+          "type": "varchar(11)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ptown": {
+          "autoincrement": false,
+          "name": "ptown",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pps": {
+          "autoincrement": false,
+          "name": "pps",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pdist": {
+          "autoincrement": false,
+          "name": "pdist",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pstate": {
+          "autoincrement": false,
+          "name": "pstate",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ppin": {
+          "autoincrement": false,
+          "name": "ppin",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ctown": {
+          "autoincrement": false,
+          "name": "ctown",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cps": {
+          "autoincrement": false,
+          "name": "cps",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cdist": {
+          "autoincrement": false,
+          "name": "cdist",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cstate": {
+          "autoincrement": false,
+          "name": "cstate",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cpin": {
+          "autoincrement": false,
+          "name": "cpin",
+          "type": "varchar(6)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "prevschool": {
+          "autoincrement": false,
+          "name": "prevschool",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "prevclass": {
+          "autoincrement": false,
+          "name": "prevclass",
+          "type": "varchar(6)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "doa": {
+          "autoincrement": false,
+          "name": "doa",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "testmarks": {
+          "autoincrement": false,
+          "name": "testmarks",
+          "type": "varchar(3)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "autoincrement": false,
+          "name": "email",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "disability": {
+          "autoincrement": false,
+          "name": "disability",
+          "type": "varchar(4)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "disatype": {
+          "autoincrement": false,
+          "name": "disatype",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "schlor": {
+          "autoincrement": false,
+          "name": "schlor",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "schlorofferedby": {
+          "autoincrement": false,
+          "name": "schlorofferedby",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hostel": {
+          "autoincrement": false,
+          "name": "hostel",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "transport": {
+          "autoincrement": false,
+          "name": "transport",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "imagepath": {
+          "autoincrement": false,
+          "name": "imagepath",
+          "type": "varchar(300)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "barcode": {
+          "autoincrement": false,
+          "name": "barcode",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "incharge": {
+          "autoincrement": false,
+          "name": "incharge",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sessiondues": {
+          "autoincrement": false,
+          "name": "sessiondues",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "active": {
+          "autoincrement": false,
+          "name": "active",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "coa": {
+          "autoincrement": false,
+          "name": "coa",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_admissionfeepmt": {
+      "name": "tbl_admissionfeepmt",
+      "columns": {
+        "admsrno": {
+          "autoincrement": false,
+          "name": "admsrno",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feetype": {
+          "autoincrement": false,
+          "name": "feetype",
+          "type": "varchar(60)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amount": {
+          "autoincrement": false,
+          "name": "amount",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "paidamt": {
+          "autoincrement": false,
+          "name": "paidamt",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "duesamt": {
+          "autoincrement": false,
+          "name": "duesamt",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "totamount": {
+          "autoincrement": false,
+          "name": "totamount",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pmtmode": {
+          "autoincrement": false,
+          "name": "pmtmode",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "chno": {
+          "autoincrement": false,
+          "name": "chno",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "bank": {
+          "autoincrement": false,
+          "name": "bank",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amtinword": {
+          "autoincrement": false,
+          "name": "amtinword",
+          "type": "varchar(300)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "concession": {
+          "autoincrement": false,
+          "name": "concession",
+          "type": "float(9,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "netamt": {
+          "autoincrement": false,
+          "name": "netamt",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "totamt": {
+          "autoincrement": false,
+          "name": "totamt",
+          "type": "float(9,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "incharge": {
+          "autoincrement": false,
+          "name": "incharge",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "duesstatus": {
+          "autoincrement": false,
+          "name": "duesstatus",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_admissionfeesetup": {
+      "name": "tbl_admissionfeesetup",
+      "columns": {
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feetype": {
+          "autoincrement": false,
+          "name": "feetype",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amount": {
+          "autoincrement": false,
+          "name": "amount",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_admitnotes": {
+      "name": "tbl_admitnotes",
+      "columns": {
+        "note1": {
+          "autoincrement": false,
+          "name": "note1",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note2": {
+          "autoincrement": false,
+          "name": "note2",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note3": {
+          "autoincrement": false,
+          "name": "note3",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note4": {
+          "autoincrement": false,
+          "name": "note4",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_assetinfo": {
+      "name": "tbl_assetinfo",
+      "columns": {
+        "item_id": {
+          "autoincrement": false,
+          "name": "item_id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "item_name": {
+          "autoincrement": false,
+          "name": "item_name",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "item_size": {
+          "autoincrement": false,
+          "name": "item_size",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "old_qty": {
+          "autoincrement": false,
+          "name": "old_qty",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "updated_qty": {
+          "autoincrement": false,
+          "name": "updated_qty",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "new_qty": {
+          "autoincrement": false,
+          "name": "new_qty",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "action": {
+          "autoincrement": false,
+          "name": "action",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dou": {
+          "autoincrement": false,
+          "name": "dou",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_attendance": {
+      "name": "tbl_attendance",
+      "columns": {
+        "sr": {
+          "autoincrement": true,
+          "name": "sr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sname": {
+          "autoincrement": false,
+          "name": "sname",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(3)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "section": {
+          "autoincrement": false,
+          "name": "section",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "roll": {
+          "autoincrement": false,
+          "name": "roll",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(9)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "autoincrement": false,
+          "name": "status",
+          "type": "varchar(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "adate": {
+          "autoincrement": false,
+          "name": "adate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {
+        "sr": {
+          "name": "sr",
+          "columns": [
+            "sr"
+          ]
+        }
+      },
+      "checkConstraint": {}
+    },
+    "tbl_attreport": {
+      "name": "tbl_attreport",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sec": {
+          "autoincrement": false,
+          "name": "sec",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "roll": {
+          "autoincrement": false,
+          "name": "roll",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "autoincrement": false,
+          "name": "status",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "intime": {
+          "autoincrement": false,
+          "name": "intime",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lateby": {
+          "autoincrement": false,
+          "name": "lateby",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "outtime": {
+          "autoincrement": false,
+          "name": "outtime",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "earlyby": {
+          "autoincrement": false,
+          "name": "earlyby",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_book": {
+      "name": "tbl_book",
+      "columns": {
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "book": {
+          "autoincrement": false,
+          "name": "book",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "price": {
+          "autoincrement": false,
+          "name": "price",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_category": {
+      "name": "tbl_category",
+      "columns": {
+        "itemcategory": {
+          "autoincrement": false,
+          "name": "itemcategory",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_cc": {
+      "name": "tbl_cc",
+      "columns": {
+        "ccno": {
+          "autoincrement": false,
+          "name": "ccno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sname": {
+          "autoincrement": false,
+          "name": "sname",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fname": {
+          "autoincrement": false,
+          "name": "fname",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dob": {
+          "autoincrement": false,
+          "name": "dob",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dobinwords": {
+          "autoincrement": false,
+          "name": "dobinwords",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "conduct": {
+          "autoincrement": false,
+          "name": "conduct",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "passclass": {
+          "autoincrement": false,
+          "name": "passclass",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "passyear": {
+          "autoincrement": false,
+          "name": "passyear",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "doi": {
+          "autoincrement": false,
+          "name": "doi",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "barcodepath": {
+          "autoincrement": false,
+          "name": "barcodepath",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_check": {
+      "name": "tbl_check",
+      "columns": {
+        "intime": {
+          "autoincrement": false,
+          "name": "intime",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "outtime": {
+          "autoincrement": false,
+          "name": "outtime",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_class": {
+      "name": "tbl_class",
+      "columns": {
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sr": {
+          "autoincrement": false,
+          "name": "sr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_classhouseroll": {
+      "name": "tbl_classhouseroll",
+      "columns": {
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "house": {
+          "autoincrement": false,
+          "name": "house",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "section": {
+          "autoincrement": false,
+          "name": "section",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "roll": {
+          "autoincrement": false,
+          "name": "roll",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_contactbook": {
+      "name": "tbl_contactbook",
+      "columns": {
+        "sr": {
+          "autoincrement": true,
+          "name": "sr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mobile": {
+          "autoincrement": false,
+          "name": "mobile",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "address": {
+          "autoincrement": false,
+          "name": "address",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "autoincrement": false,
+          "name": "email",
+          "type": "varchar(150)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "autoincrement": false,
+          "name": "description",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {
+        "tbl_contactbook_sr": {
+          "name": "tbl_contactbook_sr",
+          "columns": [
+            "sr"
+          ]
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_dayboarderfeesetup": {
+      "name": "tbl_dayboarderfeesetup",
+      "columns": {
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feetype": {
+          "autoincrement": false,
+          "name": "feetype",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amount": {
+          "autoincrement": false,
+          "name": "amount",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_dayexpense": {
+      "name": "tbl_dayexpense",
+      "columns": {
+        "srno": {
+          "autoincrement": false,
+          "name": "srno",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amount": {
+          "autoincrement": false,
+          "name": "amount",
+          "type": "float(9,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "particular": {
+          "autoincrement": false,
+          "name": "particular",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "expby": {
+          "autoincrement": false,
+          "name": "expby",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "voucher": {
+          "autoincrement": false,
+          "name": "voucher",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "autoincrement": false,
+          "name": "status",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_demandbillsetup": {
+      "name": "tbl_demandbillsetup",
+      "columns": {
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "month": {
+          "autoincrement": false,
+          "name": "month",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feetype": {
+          "autoincrement": false,
+          "name": "feetype",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amount": {
+          "autoincrement": false,
+          "name": "amount",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_demandbillstatus": {
+      "name": "tbl_demandbillstatus",
+      "columns": {
+        "month": {
+          "autoincrement": false,
+          "name": "month",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "autoincrement": false,
+          "name": "status",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_demandnotes": {
+      "name": "tbl_demandnotes",
+      "columns": {
+        "note1": {
+          "autoincrement": false,
+          "name": "note1",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note2": {
+          "autoincrement": false,
+          "name": "note2",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note3": {
+          "autoincrement": false,
+          "name": "note3",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note4": {
+          "autoincrement": false,
+          "name": "note4",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_eadmitcardnotes": {
+      "name": "tbl_eadmitcardnotes",
+      "columns": {
+        "note1": {
+          "autoincrement": false,
+          "name": "note1",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_emailconfig": {
+      "name": "tbl_emailconfig",
+      "columns": {
+        "user": {
+          "autoincrement": false,
+          "name": "user",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pass": {
+          "autoincrement": false,
+          "name": "pass",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sendto": {
+          "autoincrement": false,
+          "name": "sendto",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_empatt": {
+      "name": "tbl_empatt",
+      "columns": {
+        "empid": {
+          "autoincrement": false,
+          "name": "empid",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "autoincrement": false,
+          "name": "status",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "intime": {
+          "autoincrement": false,
+          "name": "intime",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lateby": {
+          "autoincrement": false,
+          "name": "lateby",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "outtime": {
+          "autoincrement": false,
+          "name": "outtime",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "earlyby": {
+          "autoincrement": false,
+          "name": "earlyby",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_empattsetting": {
+      "name": "tbl_empattsetting",
+      "columns": {
+        "intime": {
+          "autoincrement": false,
+          "name": "intime",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lunchtime": {
+          "autoincrement": false,
+          "name": "lunchtime",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "outtime": {
+          "autoincrement": false,
+          "name": "outtime",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_empdellog": {
+      "name": "tbl_empdellog",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "deldate": {
+          "autoincrement": false,
+          "name": "deldate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "reason": {
+          "autoincrement": false,
+          "name": "reason",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_employeesetting": {
+      "name": "tbl_employeesetting",
+      "columns": {
+        "empid": {
+          "autoincrement": false,
+          "name": "empid",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gender": {
+          "autoincrement": false,
+          "name": "gender",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mob": {
+          "autoincrement": false,
+          "name": "mob",
+          "type": "varchar(12)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "phone": {
+          "autoincrement": false,
+          "name": "phone",
+          "type": "varchar(12)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dob": {
+          "autoincrement": false,
+          "name": "dob",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "qualification": {
+          "autoincrement": false,
+          "name": "qualification",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "designation": {
+          "autoincrement": false,
+          "name": "designation",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fname": {
+          "autoincrement": false,
+          "name": "fname",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "doj": {
+          "autoincrement": false,
+          "name": "doj",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "town": {
+          "autoincrement": false,
+          "name": "town",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "po": {
+          "autoincrement": false,
+          "name": "po",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ps": {
+          "autoincrement": false,
+          "name": "ps",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dist": {
+          "autoincrement": false,
+          "name": "dist",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pin": {
+          "autoincrement": false,
+          "name": "pin",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "state": {
+          "autoincrement": false,
+          "name": "state",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ppath": {
+          "autoincrement": false,
+          "name": "ppath",
+          "type": "varchar(300)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "idpath": {
+          "autoincrement": false,
+          "name": "idpath",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "barcode": {
+          "autoincrement": false,
+          "name": "barcode",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "active": {
+          "autoincrement": false,
+          "name": "active",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_emprfid": {
+      "name": "tbl_emprfid",
+      "columns": {
+        "empid": {
+          "autoincrement": false,
+          "name": "empid",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "rfid": {
+          "autoincrement": false,
+          "name": "rfid",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_enttestresult": {
+      "name": "tbl_enttestresult",
+      "columns": {
+        "regno": {
+          "autoincrement": false,
+          "name": "regno",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "marks": {
+          "autoincrement": false,
+          "name": "marks",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "classfitfor": {
+          "autoincrement": false,
+          "name": "classfitfor",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "att": {
+          "autoincrement": false,
+          "name": "att",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "remarks": {
+          "autoincrement": false,
+          "name": "remarks",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_eventlog": {
+      "name": "tbl_eventlog",
+      "columns": {
+        "sr": {
+          "autoincrement": true,
+          "name": "sr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "uid": {
+          "autoincrement": false,
+          "name": "uid",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "time": {
+          "autoincrement": false,
+          "name": "time",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "event": {
+          "autoincrement": false,
+          "name": "event",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {
+        "tbl_eventlog_sr": {
+          "name": "tbl_eventlog_sr",
+          "columns": [
+            "sr"
+          ]
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_examfee": {
+      "name": "tbl_examfee",
+      "columns": {
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "apr": {
+          "autoincrement": false,
+          "name": "apr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "may": {
+          "autoincrement": false,
+          "name": "may",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "jun": {
+          "autoincrement": false,
+          "name": "jun",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "jul": {
+          "autoincrement": false,
+          "name": "jul",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "aug": {
+          "autoincrement": false,
+          "name": "aug",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sep": {
+          "autoincrement": false,
+          "name": "sep",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "oct": {
+          "autoincrement": false,
+          "name": "oct",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nov": {
+          "autoincrement": false,
+          "name": "nov",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dece": {
+          "autoincrement": false,
+          "name": "dece",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "jan": {
+          "autoincrement": false,
+          "name": "jan",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feb": {
+          "autoincrement": false,
+          "name": "feb",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mar": {
+          "autoincrement": false,
+          "name": "mar",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_examname": {
+      "name": "tbl_examname",
+      "columns": {
+        "sr": {
+          "autoincrement": false,
+          "name": "sr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "examname": {
+          "autoincrement": false,
+          "name": "examname",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_exportdir": {
+      "name": "tbl_exportdir",
+      "columns": {
+        "path": {
+          "autoincrement": false,
+          "name": "path",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_feenotes": {
+      "name": "tbl_feenotes",
+      "columns": {
+        "note1": {
+          "autoincrement": false,
+          "name": "note1",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note2": {
+          "autoincrement": false,
+          "name": "note2",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note3": {
+          "autoincrement": false,
+          "name": "note3",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note4": {
+          "autoincrement": false,
+          "name": "note4",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_feepaymentdetail": {
+      "name": "tbl_feepaymentdetail",
+      "columns": {
+        "sl": {
+          "autoincrement": true,
+          "name": "sl",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "regno": {
+          "autoincrement": false,
+          "name": "regno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "apr": {
+          "autoincrement": false,
+          "name": "apr",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "may": {
+          "autoincrement": false,
+          "name": "may",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "jun": {
+          "autoincrement": false,
+          "name": "jun",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "jul": {
+          "autoincrement": false,
+          "name": "jul",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "aug": {
+          "autoincrement": false,
+          "name": "aug",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sep": {
+          "autoincrement": false,
+          "name": "sep",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "oct": {
+          "autoincrement": false,
+          "name": "oct",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nov": {
+          "autoincrement": false,
+          "name": "nov",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dec": {
+          "autoincrement": false,
+          "name": "dec",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "jan": {
+          "autoincrement": false,
+          "name": "jan",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fab": {
+          "autoincrement": false,
+          "name": "fab",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mar": {
+          "autoincrement": false,
+          "name": "mar",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "net_dues": {
+          "autoincrement": false,
+          "name": "net_dues",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {
+        "tbl_feepaymentdetail_sl": {
+          "name": "tbl_feepaymentdetail_sl",
+          "columns": [
+            "sl"
+          ]
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_feereport": {
+      "name": "tbl_feereport",
+      "columns": {
+        "srno": {
+          "autoincrement": false,
+          "name": "srno",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "month": {
+          "autoincrement": false,
+          "name": "month",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "monthfee": {
+          "autoincrement": false,
+          "name": "monthfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "transport": {
+          "autoincrement": false,
+          "name": "transport",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "transportfee": {
+          "autoincrement": false,
+          "name": "transportfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "examfee": {
+          "autoincrement": false,
+          "name": "examfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "totamt": {
+          "autoincrement": false,
+          "name": "totamt",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "netamt": {
+          "autoincrement": false,
+          "name": "netamt",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "concession": {
+          "autoincrement": false,
+          "name": "concession",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "payment": {
+          "autoincrement": false,
+          "name": "payment",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dues": {
+          "autoincrement": false,
+          "name": "dues",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amtinword": {
+          "autoincrement": false,
+          "name": "amtinword",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_frmname": {
+      "name": "tbl_frmname",
+      "columns": {
+        "menuname": {
+          "autoincrement": false,
+          "name": "menuname",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "frmname": {
+          "autoincrement": false,
+          "name": "frmname",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_holidaysetup": {
+      "name": "tbl_holidaysetup",
+      "columns": {
+        "hname": {
+          "autoincrement": false,
+          "name": "hname",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hcode": {
+          "autoincrement": false,
+          "name": "hcode",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tot_day": {
+          "autoincrement": false,
+          "name": "tot_day",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "start_date": {
+          "autoincrement": false,
+          "name": "start_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "end_date": {
+          "autoincrement": false,
+          "name": "end_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_hostelfee": {
+      "name": "tbl_hostelfee",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "apr": {
+          "autoincrement": false,
+          "name": "apr",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "may": {
+          "autoincrement": false,
+          "name": "may",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "jun": {
+          "autoincrement": false,
+          "name": "jun",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "jul": {
+          "autoincrement": false,
+          "name": "jul",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "aug": {
+          "autoincrement": false,
+          "name": "aug",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sep": {
+          "autoincrement": false,
+          "name": "sep",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "oct": {
+          "autoincrement": false,
+          "name": "oct",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nov": {
+          "autoincrement": false,
+          "name": "nov",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dece": {
+          "autoincrement": false,
+          "name": "dece",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "jan": {
+          "autoincrement": false,
+          "name": "jan",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feb": {
+          "autoincrement": false,
+          "name": "feb",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mar": {
+          "autoincrement": false,
+          "name": "mar",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_hostelfeereport": {
+      "name": "tbl_hostelfeereport",
+      "columns": {
+        "srno": {
+          "autoincrement": false,
+          "name": "srno",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "month": {
+          "autoincrement": false,
+          "name": "month",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "monthfee": {
+          "autoincrement": false,
+          "name": "monthfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "totamt": {
+          "autoincrement": false,
+          "name": "totamt",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "netamt": {
+          "autoincrement": false,
+          "name": "netamt",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "concession": {
+          "autoincrement": false,
+          "name": "concession",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "payment": {
+          "autoincrement": false,
+          "name": "payment",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "billdues": {
+          "autoincrement": false,
+          "name": "billdues",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dues": {
+          "autoincrement": false,
+          "name": "dues",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amtinword": {
+          "autoincrement": false,
+          "name": "amtinword",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_hostelfeesetup": {
+      "name": "tbl_hostelfeesetup",
+      "columns": {
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feetype": {
+          "autoincrement": false,
+          "name": "feetype",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amount": {
+          "autoincrement": false,
+          "name": "amount",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_housemaster": {
+      "name": "tbl_housemaster",
+      "columns": {
+        "house": {
+          "autoincrement": false,
+          "name": "house",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "colour": {
+          "autoincrement": false,
+          "name": "colour",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_item": {
+      "name": "tbl_item",
+      "columns": {
+        "itemname": {
+          "autoincrement": false,
+          "name": "itemname",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "itemcategory": {
+          "autoincrement": false,
+          "name": "itemcategory",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_itembill": {
+      "name": "tbl_itembill",
+      "columns": {
+        "regno": {
+          "autoincrement": false,
+          "name": "regno",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "rcpt": {
+          "autoincrement": false,
+          "name": "rcpt",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "item_name": {
+          "autoincrement": false,
+          "name": "item_name",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "item_size": {
+          "autoincrement": false,
+          "name": "item_size",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "quantity": {
+          "autoincrement": false,
+          "name": "quantity",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total_amount": {
+          "autoincrement": false,
+          "name": "total_amount",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "payment": {
+          "autoincrement": false,
+          "name": "payment",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dues": {
+          "autoincrement": false,
+          "name": "dues",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "purchase_date": {
+          "autoincrement": false,
+          "name": "purchase_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_itemdetails": {
+      "name": "tbl_itemdetails",
+      "columns": {
+        "itemname": {
+          "autoincrement": false,
+          "name": "itemname",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "price": {
+          "autoincrement": false,
+          "name": "price",
+          "type": "float(9,2)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_itemmaster": {
+      "name": "tbl_itemmaster",
+      "columns": {
+        "itemid": {
+          "autoincrement": false,
+          "name": "itemid",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "itemname": {
+          "autoincrement": false,
+          "name": "itemname",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "itemcat": {
+          "autoincrement": false,
+          "name": "itemcat",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "itemsize": {
+          "autoincrement": false,
+          "name": "itemsize",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "itemprice": {
+          "autoincrement": false,
+          "name": "itemprice",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "itemtqty": {
+          "autoincrement": false,
+          "name": "itemtqty",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "qty": {
+          "autoincrement": false,
+          "name": "qty",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "remarks": {
+          "autoincrement": false,
+          "name": "remarks",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_itemreceipt": {
+      "name": "tbl_itemreceipt",
+      "columns": {
+        "srno": {
+          "autoincrement": false,
+          "name": "srno",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "particular": {
+          "autoincrement": false,
+          "name": "particular",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "quantity": {
+          "autoincrement": false,
+          "name": "quantity",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "price": {
+          "autoincrement": false,
+          "name": "price",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "totamt": {
+          "autoincrement": false,
+          "name": "totamt",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pament": {
+          "autoincrement": false,
+          "name": "pament",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dues": {
+          "autoincrement": false,
+          "name": "dues",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "totalamt": {
+          "autoincrement": false,
+          "name": "totalamt",
+          "type": "float(9,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "saledate": {
+          "autoincrement": false,
+          "name": "saledate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "backdues": {
+          "autoincrement": false,
+          "name": "backdues",
+          "type": "float(9,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amtinword": {
+          "autoincrement": false,
+          "name": "amtinword",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "incharge": {
+          "autoincrement": false,
+          "name": "incharge",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pmtmode": {
+          "autoincrement": false,
+          "name": "pmtmode",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "refno": {
+          "autoincrement": false,
+          "name": "refno",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_latefinedate": {
+      "name": "tbl_latefinedate",
+      "columns": {
+        "lday": {
+          "autoincrement": false,
+          "name": "lday",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_login": {
+      "name": "tbl_login",
+      "columns": {
+        "uid": {
+          "autoincrement": false,
+          "name": "uid",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pwd": {
+          "autoincrement": false,
+          "name": "pwd",
+          "type": "varchar(128)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "utype": {
+          "autoincrement": false,
+          "name": "utype",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_miscfee": {
+      "name": "tbl_miscfee",
+      "columns": {
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "apr": {
+          "autoincrement": false,
+          "name": "apr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "may": {
+          "autoincrement": false,
+          "name": "may",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "jun": {
+          "autoincrement": false,
+          "name": "jun",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "jul": {
+          "autoincrement": false,
+          "name": "jul",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "aug": {
+          "autoincrement": false,
+          "name": "aug",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sep": {
+          "autoincrement": false,
+          "name": "sep",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "oct": {
+          "autoincrement": false,
+          "name": "oct",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nov": {
+          "autoincrement": false,
+          "name": "nov",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dece": {
+          "autoincrement": false,
+          "name": "dece",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "jan": {
+          "autoincrement": false,
+          "name": "jan",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feb": {
+          "autoincrement": false,
+          "name": "feb",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mar": {
+          "autoincrement": false,
+          "name": "mar",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_monthfee": {
+      "name": "tbl_monthfee",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(16)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "apr": {
+          "autoincrement": false,
+          "name": "apr",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "may": {
+          "autoincrement": false,
+          "name": "may",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "jun": {
+          "autoincrement": false,
+          "name": "jun",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "jul": {
+          "autoincrement": false,
+          "name": "jul",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "aug": {
+          "autoincrement": false,
+          "name": "aug",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "sep": {
+          "autoincrement": false,
+          "name": "sep",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "oct": {
+          "autoincrement": false,
+          "name": "oct",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nov": {
+          "autoincrement": false,
+          "name": "nov",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "dece": {
+          "autoincrement": false,
+          "name": "dece",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "jan": {
+          "autoincrement": false,
+          "name": "jan",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "feb": {
+          "autoincrement": false,
+          "name": "feb",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "mar": {
+          "autoincrement": false,
+          "name": "mar",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "billdues": {
+          "autoincrement": false,
+          "name": "billdues",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(9)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_monthlyfeesetup": {
+      "name": "tbl_monthlyfeesetup",
+      "columns": {
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tuitionfee": {
+          "autoincrement": false,
+          "name": "tuitionfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "libraryfee": {
+          "autoincrement": false,
+          "name": "libraryfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "compfee": {
+          "autoincrement": false,
+          "name": "compfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "labfee": {
+          "autoincrement": false,
+          "name": "labfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sclassfee": {
+          "autoincrement": false,
+          "name": "sclassfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "examfee": {
+          "autoincrement": false,
+          "name": "examfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "miscfee": {
+          "autoincrement": false,
+          "name": "miscfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fine": {
+          "autoincrement": false,
+          "name": "fine",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "transfine": {
+          "autoincrement": false,
+          "name": "transfine",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_printdaysummary": {
+      "name": "tbl_printdaysummary",
+      "columns": {
+        "fdate": {
+          "autoincrement": false,
+          "name": "fdate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "todate": {
+          "autoincrement": false,
+          "name": "todate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "prospectus": {
+          "autoincrement": false,
+          "name": "prospectus",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "newadm": {
+          "autoincrement": false,
+          "name": "newadm",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "itemsale": {
+          "autoincrement": false,
+          "name": "itemsale",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "readm": {
+          "autoincrement": false,
+          "name": "readm",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tuition": {
+          "autoincrement": false,
+          "name": "tuition",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "transport": {
+          "autoincrement": false,
+          "name": "transport",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hostel": {
+          "autoincrement": false,
+          "name": "hostel",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "latefee": {
+          "autoincrement": false,
+          "name": "latefee",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "exam": {
+          "autoincrement": false,
+          "name": "exam",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "misc": {
+          "autoincrement": false,
+          "name": "misc",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "backdues": {
+          "autoincrement": false,
+          "name": "backdues",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total": {
+          "autoincrement": false,
+          "name": "total",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "concession": {
+          "autoincrement": false,
+          "name": "concession",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "billdues": {
+          "autoincrement": false,
+          "name": "billdues",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "exp": {
+          "autoincrement": false,
+          "name": "exp",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "netamt": {
+          "autoincrement": false,
+          "name": "netamt",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "bycash": {
+          "autoincrement": false,
+          "name": "bycash",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amtinword": {
+          "autoincrement": false,
+          "name": "amtinword",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_pronotes": {
+      "name": "tbl_pronotes",
+      "columns": {
+        "note1": {
+          "autoincrement": false,
+          "name": "note1",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note2": {
+          "autoincrement": false,
+          "name": "note2",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note3": {
+          "autoincrement": false,
+          "name": "note3",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note4": {
+          "autoincrement": false,
+          "name": "note4",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_prospectussale": {
+      "name": "tbl_prospectussale",
+      "columns": {
+        "rcpt_no": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "rcpt_no",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "form_no": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "form_no",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "phone": {
+          "autoincrement": false,
+          "name": "phone",
+          "type": "varchar(12)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "town": {
+          "autoincrement": false,
+          "name": "town",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "po": {
+          "autoincrement": false,
+          "name": "po",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ps": {
+          "autoincrement": false,
+          "name": "ps",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dist": {
+          "autoincrement": false,
+          "name": "dist",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pin": {
+          "autoincrement": false,
+          "name": "pin",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tot_value": {
+          "autoincrement": false,
+          "name": "tot_value",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tot_qty": {
+          "autoincrement": false,
+          "name": "tot_qty",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tot_amount": {
+          "autoincrement": false,
+          "name": "tot_amount",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "qty": {
+          "autoincrement": false,
+          "name": "qty",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "classes": {
+          "autoincrement": false,
+          "name": "classes",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "incharge": {
+          "autoincrement": false,
+          "name": "incharge",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pdate": {
+          "autoincrement": false,
+          "name": "pdate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "reg_status": {
+          "autoincrement": false,
+          "name": "reg_status",
+          "type": "varchar(3)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amtinword": {
+          "autoincrement": false,
+          "name": "amtinword",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pmtmode": {
+          "autoincrement": false,
+          "name": "pmtmode",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "refno": {
+          "autoincrement": false,
+          "name": "refno",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_readmission": {
+      "name": "tbl_readmission",
+      "columns": {
+        "readmsrno": {
+          "autoincrement": false,
+          "name": "readmsrno",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feetype": {
+          "autoincrement": false,
+          "name": "feetype",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amount": {
+          "autoincrement": false,
+          "name": "amount",
+          "type": "float(9,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "totamount": {
+          "autoincrement": false,
+          "name": "totamount",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "payment": {
+          "autoincrement": false,
+          "name": "payment",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "concession": {
+          "autoincrement": false,
+          "name": "concession",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "netamt": {
+          "autoincrement": false,
+          "name": "netamt",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "advance": {
+          "autoincrement": false,
+          "name": "advance",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dues": {
+          "autoincrement": false,
+          "name": "dues",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amtinword": {
+          "autoincrement": false,
+          "name": "amtinword",
+          "type": "varchar(300)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "rdate": {
+          "autoincrement": false,
+          "name": "rdate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_registration": {
+      "name": "tbl_registration",
+      "columns": {
+        "form_no": {
+          "autoincrement": false,
+          "name": "form_no",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "regno": {
+          "autoincrement": false,
+          "name": "regno",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sname": {
+          "autoincrement": false,
+          "name": "sname",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gender": {
+          "autoincrement": false,
+          "name": "gender",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dob": {
+          "autoincrement": false,
+          "name": "dob",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fname": {
+          "autoincrement": false,
+          "name": "fname",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fqual": {
+          "autoincrement": false,
+          "name": "fqual",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "foccu": {
+          "autoincrement": false,
+          "name": "foccu",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mname": {
+          "autoincrement": false,
+          "name": "mname",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mqual": {
+          "autoincrement": false,
+          "name": "mqual",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "moccu": {
+          "autoincrement": false,
+          "name": "moccu",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gname": {
+          "autoincrement": false,
+          "name": "gname",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gqual": {
+          "autoincrement": false,
+          "name": "gqual",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "goccu": {
+          "autoincrement": false,
+          "name": "goccu",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "p_town": {
+          "autoincrement": false,
+          "name": "p_town",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "p_po": {
+          "autoincrement": false,
+          "name": "p_po",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "p_ps": {
+          "autoincrement": false,
+          "name": "p_ps",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "p_dist": {
+          "autoincrement": false,
+          "name": "p_dist",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "p_pin": {
+          "autoincrement": false,
+          "name": "p_pin",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "p_state": {
+          "autoincrement": false,
+          "name": "p_state",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "c_town": {
+          "autoincrement": false,
+          "name": "c_town",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "c_po": {
+          "autoincrement": false,
+          "name": "c_po",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "c_ps": {
+          "autoincrement": false,
+          "name": "c_ps",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "c_dist": {
+          "autoincrement": false,
+          "name": "c_dist",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "c_pin": {
+          "autoincrement": false,
+          "name": "c_pin",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "c_state": {
+          "autoincrement": false,
+          "name": "c_state",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "contact1": {
+          "autoincrement": false,
+          "name": "contact1",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "contact2": {
+          "autoincrement": false,
+          "name": "contact2",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "prevschool": {
+          "autoincrement": false,
+          "name": "prevschool",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "prevclass": {
+          "autoincrement": false,
+          "name": "prevclass",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "regdate": {
+          "autoincrement": false,
+          "name": "regdate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "regincharge": {
+          "autoincrement": false,
+          "name": "regincharge",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "testdate": {
+          "autoincrement": false,
+          "name": "testdate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "testtime": {
+          "autoincrement": false,
+          "name": "testtime",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "autoincrement": false,
+          "name": "status",
+          "type": "varchar(3)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "image_path": {
+          "autoincrement": false,
+          "name": "image_path",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_regnotes": {
+      "name": "tbl_regnotes",
+      "columns": {
+        "note1": {
+          "autoincrement": false,
+          "name": "note1",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note2": {
+          "autoincrement": false,
+          "name": "note2",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note3": {
+          "autoincrement": false,
+          "name": "note3",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note4": {
+          "autoincrement": false,
+          "name": "note4",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_reportcard": {
+      "name": "tbl_reportcard",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "section": {
+          "autoincrement": false,
+          "name": "section",
+          "type": "varchar(1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "roll": {
+          "autoincrement": false,
+          "name": "roll",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dob": {
+          "autoincrement": false,
+          "name": "dob",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fname": {
+          "autoincrement": false,
+          "name": "fname",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fmob": {
+          "autoincrement": false,
+          "name": "fmob",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "examname": {
+          "autoincrement": false,
+          "name": "examname",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "rdate": {
+          "autoincrement": false,
+          "name": "rdate",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_reportdemandbill": {
+      "name": "tbl_reportdemandbill",
+      "columns": {
+        "r1": {
+          "autoincrement": false,
+          "name": "r1",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r2": {
+          "autoincrement": false,
+          "name": "r2",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r3": {
+          "autoincrement": false,
+          "name": "r3",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r4": {
+          "autoincrement": false,
+          "name": "r4",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r5": {
+          "autoincrement": false,
+          "name": "r5",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r6": {
+          "autoincrement": false,
+          "name": "r6",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r7": {
+          "autoincrement": false,
+          "name": "r7",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r8": {
+          "autoincrement": false,
+          "name": "r8",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r9": {
+          "autoincrement": false,
+          "name": "r9",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r10": {
+          "autoincrement": false,
+          "name": "r10",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r11": {
+          "autoincrement": false,
+          "name": "r11",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r12": {
+          "autoincrement": false,
+          "name": "r12",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r13": {
+          "autoincrement": false,
+          "name": "r13",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r14": {
+          "autoincrement": false,
+          "name": "r14",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r15": {
+          "autoincrement": false,
+          "name": "r15",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r16": {
+          "autoincrement": false,
+          "name": "r16",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r17": {
+          "autoincrement": false,
+          "name": "r17",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_rfid": {
+      "name": "tbl_rfid",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "srfid": {
+          "autoincrement": false,
+          "name": "srfid",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "prfid": {
+          "autoincrement": false,
+          "name": "prfid",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_route": {
+      "name": "tbl_route",
+      "columns": {
+        "route": {
+          "autoincrement": false,
+          "name": "route",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_routesetup": {
+      "name": "tbl_routesetup",
+      "columns": {
+        "rtid": {
+          "autoincrement": false,
+          "name": "rtid",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "vno": {
+          "autoincrement": false,
+          "name": "vno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "toDes": {
+          "autoincrement": false,
+          "name": "toDes",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fair": {
+          "autoincrement": false,
+          "name": "fair",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_salenotes": {
+      "name": "tbl_salenotes",
+      "columns": {
+        "note1": {
+          "autoincrement": false,
+          "name": "note1",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note2": {
+          "autoincrement": false,
+          "name": "note2",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note3": {
+          "autoincrement": false,
+          "name": "note3",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note4": {
+          "autoincrement": false,
+          "name": "note4",
+          "type": "varchar(400)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_schoolsetup": {
+      "name": "tbl_schoolsetup",
+      "columns": {
+        "regno": {
+          "autoincrement": false,
+          "name": "regno",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "title": {
+          "autoincrement": false,
+          "name": "title",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "branch": {
+          "autoincrement": false,
+          "name": "branch",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "address": {
+          "autoincrement": false,
+          "name": "address",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "city": {
+          "autoincrement": false,
+          "name": "city",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "state": {
+          "autoincrement": false,
+          "name": "state",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "country": {
+          "autoincrement": false,
+          "name": "country",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pincode": {
+          "autoincrement": false,
+          "name": "pincode",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "contact1": {
+          "autoincrement": false,
+          "name": "contact1",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "contact2": {
+          "autoincrement": false,
+          "name": "contact2",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "email": {
+          "autoincrement": false,
+          "name": "email",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "website": {
+          "autoincrement": false,
+          "name": "website",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "setup_date": {
+          "autoincrement": false,
+          "name": "setup_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "shortcode": {
+          "autoincrement": false,
+          "name": "shortcode",
+          "type": "varchar(3)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "punchline": {
+          "autoincrement": false,
+          "name": "punchline",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_section": {
+      "name": "tbl_section",
+      "columns": {
+        "section": {
+          "autoincrement": false,
+          "name": "section",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {
+        "tbl_section_section": {
+          "name": "tbl_section_section",
+          "columns": [
+            "section"
+          ]
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {
+        "section": {
+          "name": "section",
+          "columns": [
+            "section"
+          ]
+        },
+        "section_2": {
+          "name": "section_2",
+          "columns": [
+            "section"
+          ]
+        }
+      },
+      "checkConstraint": {}
+    },
+    "tbl_securityfeedetails": {
+      "name": "tbl_securityfeedetails",
+      "columns": {
+        "rcptno": {
+          "autoincrement": false,
+          "name": "rcptno",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(13)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "securityfee": {
+          "autoincrement": false,
+          "name": "securityfee",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "paidinclass": {
+          "autoincrement": false,
+          "name": "paidinclass",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "paidvia": {
+          "autoincrement": false,
+          "name": "paidvia",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "paiddate": {
+          "autoincrement": false,
+          "name": "paiddate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "autoincrement": false,
+          "name": "status",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(9)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "incharge": {
+          "autoincrement": false,
+          "name": "incharge",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_securityfeesetup": {
+      "name": "tbl_securityfeesetup",
+      "columns": {
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fee": {
+          "autoincrement": false,
+          "name": "fee",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_sessionclosingstatus": {
+      "name": "tbl_sessionclosingstatus",
+      "columns": {
+        "sr": {
+          "autoincrement": true,
+          "name": "sr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "autoincrement": false,
+          "name": "status",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cdate": {
+          "autoincrement": false,
+          "name": "cdate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "incharge": {
+          "autoincrement": false,
+          "name": "incharge",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {
+        "tbl_sessionclosingstatus_sr": {
+          "name": "tbl_sessionclosingstatus_sr",
+          "columns": [
+            "sr"
+          ]
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_sessionduedetail": {
+      "name": "tbl_sessionduedetail",
+      "columns": {
+        "sr": {
+          "autoincrement": true,
+          "name": "sr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mmonth": {
+          "autoincrement": false,
+          "name": "mmonth",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mamt": {
+          "autoincrement": false,
+          "name": "mamt",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mfine": {
+          "autoincrement": false,
+          "name": "mfine",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tmonth": {
+          "autoincrement": false,
+          "name": "tmonth",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tamt": {
+          "autoincrement": false,
+          "name": "tamt",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tfine": {
+          "autoincrement": false,
+          "name": "tfine",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hmonth": {
+          "autoincrement": false,
+          "name": "hmonth",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hamt": {
+          "autoincrement": false,
+          "name": "hamt",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hfine": {
+          "autoincrement": false,
+          "name": "hfine",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "backdues": {
+          "autoincrement": false,
+          "name": "backdues",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "totamt": {
+          "autoincrement": false,
+          "name": "totamt",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "clossingdate": {
+          "autoincrement": false,
+          "name": "clossingdate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "incharge": {
+          "autoincrement": false,
+          "name": "incharge",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {
+        "tbl_sessionduedetail_sr": {
+          "name": "tbl_sessionduedetail_sr",
+          "columns": [
+            "sr"
+          ]
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_sessionfee": {
+      "name": "tbl_sessionfee",
+      "columns": {
+        "sr": {
+          "autoincrement": false,
+          "name": "sr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feetype": {
+          "autoincrement": false,
+          "name": "feetype",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amt": {
+          "autoincrement": false,
+          "name": "amt",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pmttype": {
+          "autoincrement": false,
+          "name": "pmttype",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "totamt": {
+          "autoincrement": false,
+          "name": "totamt",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "concession": {
+          "autoincrement": false,
+          "name": "concession",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "netamt": {
+          "autoincrement": false,
+          "name": "netamt",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "payment": {
+          "autoincrement": false,
+          "name": "payment",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dues": {
+          "autoincrement": false,
+          "name": "dues",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amtinword": {
+          "autoincrement": false,
+          "name": "amtinword",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "incharge": {
+          "autoincrement": false,
+          "name": "incharge",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "duesstatus": {
+          "autoincrement": false,
+          "name": "duesstatus",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pmtmode": {
+          "autoincrement": false,
+          "name": "pmtmode",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "refno": {
+          "autoincrement": false,
+          "name": "refno",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_sessionfeehostelsetup": {
+      "name": "tbl_sessionfeehostelsetup",
+      "columns": {
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feetype": {
+          "autoincrement": false,
+          "name": "feetype",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amount": {
+          "autoincrement": false,
+          "name": "amount",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_sessionfeesetup": {
+      "name": "tbl_sessionfeesetup",
+      "columns": {
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feetype": {
+          "autoincrement": false,
+          "name": "feetype",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amount": {
+          "autoincrement": false,
+          "name": "amount",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_sessionnotes": {
+      "name": "tbl_sessionnotes",
+      "columns": {
+        "note1": {
+          "autoincrement": false,
+          "name": "note1",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note2": {
+          "autoincrement": false,
+          "name": "note2",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note3": {
+          "autoincrement": false,
+          "name": "note3",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "note4": {
+          "autoincrement": false,
+          "name": "note4",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_settingstatus": {
+      "name": "tbl_settingstatus",
+      "columns": {
+        "frmname": {
+          "autoincrement": false,
+          "name": "frmname",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "autoincrement": false,
+          "name": "status",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_smsgatewaysetting": {
+      "name": "tbl_smsgatewaysetting",
+      "columns": {
+        "uid": {
+          "autoincrement": false,
+          "name": "uid",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pwd": {
+          "autoincrement": false,
+          "name": "pwd",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sid": {
+          "autoincrement": false,
+          "name": "sid",
+          "type": "varchar(6)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "adminno": {
+          "autoincrement": false,
+          "name": "adminno",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "testmob": {
+          "autoincrement": false,
+          "name": "testmob",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_smstemplate": {
+      "name": "tbl_smstemplate",
+      "columns": {
+        "eid": {
+          "autoincrement": false,
+          "name": "eid",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tid": {
+          "autoincrement": false,
+          "name": "tid",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tname": {
+          "autoincrement": false,
+          "name": "tname",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tsms": {
+          "autoincrement": false,
+          "name": "tsms",
+          "type": "varchar(160)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stdatt": {
+      "name": "tbl_stdatt",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "autoincrement": false,
+          "name": "status",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "intime": {
+          "autoincrement": false,
+          "name": "intime",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lateby": {
+          "autoincrement": false,
+          "name": "lateby",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "outtime": {
+          "autoincrement": false,
+          "name": "outtime",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "earlyby": {
+          "autoincrement": false,
+          "name": "earlyby",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stdattsetting": {
+      "name": "tbl_stdattsetting",
+      "columns": {
+        "intime": {
+          "autoincrement": false,
+          "name": "intime",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "outtime": {
+          "autoincrement": false,
+          "name": "outtime",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lunchtime": {
+          "autoincrement": false,
+          "name": "lunchtime",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stdbackduesdetails": {
+      "name": "tbl_stdbackduesdetails",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "monthfeesr": {
+          "autoincrement": false,
+          "name": "monthfeesr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "backduesdetails": {
+          "autoincrement": false,
+          "name": "backduesdetails",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stdconcessionlog": {
+      "name": "tbl_stdconcessionlog",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "monthfee": {
+          "autoincrement": false,
+          "name": "monthfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "transportfee": {
+          "autoincrement": false,
+          "name": "transportfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hostelfee": {
+          "autoincrement": false,
+          "name": "hostelfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "concby": {
+          "autoincrement": false,
+          "name": "concby",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stddellog": {
+      "name": "tbl_stddellog",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "deldate": {
+          "autoincrement": false,
+          "name": "deldate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "reason": {
+          "autoincrement": false,
+          "name": "reason",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stdfeemaster": {
+      "name": "tbl_stdfeemaster",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(16)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "monthfee": {
+          "autoincrement": false,
+          "name": "monthfee",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "transportfee": {
+          "autoincrement": false,
+          "name": "transportfee",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "hostelfee": {
+          "autoincrement": false,
+          "name": "hostelfee",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(9)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stdhostelfeedetail": {
+      "name": "tbl_stdhostelfeedetail",
+      "columns": {
+        "sr": {
+          "autoincrement": true,
+          "name": "sr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pdate": {
+          "autoincrement": false,
+          "name": "pdate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hmonth": {
+          "autoincrement": false,
+          "name": "hmonth",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hostelfee": {
+          "autoincrement": false,
+          "name": "hostelfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "backdues": {
+          "autoincrement": false,
+          "name": "backdues",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fine": {
+          "autoincrement": false,
+          "name": "fine",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total": {
+          "autoincrement": false,
+          "name": "total",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "concession": {
+          "autoincrement": false,
+          "name": "concession",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "netamt": {
+          "autoincrement": false,
+          "name": "netamt",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "paidamt": {
+          "autoincrement": false,
+          "name": "paidamt",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dues": {
+          "autoincrement": false,
+          "name": "dues",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amtinword": {
+          "autoincrement": false,
+          "name": "amtinword",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "incharge": {
+          "autoincrement": false,
+          "name": "incharge",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {
+        "tbl_stdhostelfeedetail_sr": {
+          "name": "tbl_stdhostelfeedetail_sr",
+          "columns": [
+            "sr"
+          ]
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stdidcarddata": {
+      "name": "tbl_stdidcarddata",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fname": {
+          "autoincrement": false,
+          "name": "fname",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mname": {
+          "autoincrement": false,
+          "name": "mname",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sec": {
+          "autoincrement": false,
+          "name": "sec",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "roll": {
+          "autoincrement": false,
+          "name": "roll",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dob": {
+          "autoincrement": false,
+          "name": "dob",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "type": {
+          "autoincrement": false,
+          "name": "type",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "bgroup": {
+          "autoincrement": false,
+          "name": "bgroup",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "route": {
+          "autoincrement": false,
+          "name": "route",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "destination": {
+          "autoincrement": false,
+          "name": "destination",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "vill": {
+          "autoincrement": false,
+          "name": "vill",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ps": {
+          "autoincrement": false,
+          "name": "ps",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dist": {
+          "autoincrement": false,
+          "name": "dist",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pin": {
+          "autoincrement": false,
+          "name": "pin",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "state": {
+          "autoincrement": false,
+          "name": "state",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mob": {
+          "autoincrement": false,
+          "name": "mob",
+          "type": "varchar(11)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "photo": {
+          "autoincrement": false,
+          "name": "photo",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "barcode": {
+          "autoincrement": false,
+          "name": "barcode",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stdmarks": {
+      "name": "tbl_stdmarks",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "examtype": {
+          "autoincrement": false,
+          "name": "examtype",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "english": {
+          "autoincrement": false,
+          "name": "english",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hindi": {
+          "autoincrement": false,
+          "name": "hindi",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "maths": {
+          "autoincrement": false,
+          "name": "maths",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "science": {
+          "autoincrement": false,
+          "name": "science",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sst": {
+          "autoincrement": false,
+          "name": "sst",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gk": {
+          "autoincrement": false,
+          "name": "gk",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "compscience": {
+          "autoincrement": false,
+          "name": "compscience",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "maxmarks": {
+          "autoincrement": false,
+          "name": "maxmarks",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "passmarks": {
+          "autoincrement": false,
+          "name": "passmarks",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tmo": {
+          "autoincrement": false,
+          "name": "tmo",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "percentage": {
+          "autoincrement": false,
+          "name": "percentage",
+          "type": "float(3,1)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "grade": {
+          "autoincrement": false,
+          "name": "grade",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "rank": {
+          "autoincrement": false,
+          "name": "rank",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "att": {
+          "autoincrement": false,
+          "name": "att",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stdmonthfeedetail": {
+      "name": "tbl_stdmonthfeedetail",
+      "columns": {
+        "sr": {
+          "autoincrement": true,
+          "name": "sr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pdate": {
+          "autoincrement": false,
+          "name": "pdate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tuitionfee": {
+          "autoincrement": false,
+          "name": "tuitionfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "libraryfee": {
+          "autoincrement": false,
+          "name": "libraryfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "compfee": {
+          "autoincrement": false,
+          "name": "compfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "labfee": {
+          "autoincrement": false,
+          "name": "labfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sclassfee": {
+          "autoincrement": false,
+          "name": "sclassfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "examfee": {
+          "autoincrement": false,
+          "name": "examfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "miscfee": {
+          "autoincrement": false,
+          "name": "miscfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sessionfee": {
+          "autoincrement": false,
+          "name": "sessionfee",
+          "type": "float(10,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fmonth": {
+          "autoincrement": false,
+          "name": "fmonth",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "monthfee": {
+          "autoincrement": false,
+          "name": "monthfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tmonth": {
+          "autoincrement": false,
+          "name": "tmonth",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "transfee": {
+          "autoincrement": false,
+          "name": "transfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hmonth": {
+          "autoincrement": false,
+          "name": "hmonth",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hostelfee": {
+          "autoincrement": false,
+          "name": "hostelfee",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "backdues": {
+          "autoincrement": false,
+          "name": "backdues",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fine": {
+          "autoincrement": false,
+          "name": "fine",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tfine": {
+          "autoincrement": false,
+          "name": "tfine",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hfine": {
+          "autoincrement": false,
+          "name": "hfine",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total": {
+          "autoincrement": false,
+          "name": "total",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "concession": {
+          "autoincrement": false,
+          "name": "concession",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "netamt": {
+          "autoincrement": false,
+          "name": "netamt",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "paidamt": {
+          "autoincrement": false,
+          "name": "paidamt",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dues": {
+          "autoincrement": false,
+          "name": "dues",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "amtinword": {
+          "autoincrement": false,
+          "name": "amtinword",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "incharge": {
+          "autoincrement": false,
+          "name": "incharge",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "pmtmode": {
+          "autoincrement": false,
+          "name": "pmtmode",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pmtrefno": {
+          "autoincrement": false,
+          "name": "pmtrefno",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {
+        "tbl_stdmonthfeedetail_sr": {
+          "name": "tbl_stdmonthfeedetail_sr",
+          "columns": [
+            "sr"
+          ]
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stdscheme": {
+      "name": "tbl_stdscheme",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mscheme": {
+          "autoincrement": false,
+          "name": "mscheme",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mfee": {
+          "autoincrement": false,
+          "name": "mfee",
+          "type": "float(9,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tscheme": {
+          "autoincrement": false,
+          "name": "tscheme",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tfee": {
+          "autoincrement": false,
+          "name": "tfee",
+          "type": "float(9,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hscheme": {
+          "autoincrement": false,
+          "name": "hscheme",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "hfee": {
+          "autoincrement": false,
+          "name": "hfee",
+          "type": "float(9,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stdtransdetail": {
+      "name": "tbl_stdtransdetail",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "route": {
+          "autoincrement": false,
+          "name": "route",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "destination": {
+          "autoincrement": false,
+          "name": "destination",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stockinventorylog": {
+      "name": "tbl_stockinventorylog",
+      "columns": {
+        "itemcategory": {
+          "autoincrement": false,
+          "name": "itemcategory",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "itemname": {
+          "autoincrement": false,
+          "name": "itemname",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "itemsize": {
+          "autoincrement": false,
+          "name": "itemsize",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "old_qty": {
+          "autoincrement": false,
+          "name": "old_qty",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "updated_qty": {
+          "autoincrement": false,
+          "name": "updated_qty",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "new_qty": {
+          "autoincrement": false,
+          "name": "new_qty",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "action": {
+          "autoincrement": false,
+          "name": "action",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dou": {
+          "autoincrement": false,
+          "name": "dou",
+          "type": "datetime",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stocksetup": {
+      "name": "tbl_stocksetup",
+      "columns": {
+        "item_id": {
+          "autoincrement": false,
+          "name": "item_id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "item_name": {
+          "autoincrement": false,
+          "name": "item_name",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "item_size": {
+          "autoincrement": false,
+          "name": "item_size",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "item_price": {
+          "autoincrement": false,
+          "name": "item_price",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "item_count": {
+          "autoincrement": false,
+          "name": "item_count",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "item_status": {
+          "autoincrement": false,
+          "name": "item_status",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "threshold_quantity": {
+          "autoincrement": false,
+          "name": "threshold_quantity",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_stuconv": {
+      "name": "tbl_stuconv",
+      "columns": {
+        "regno": {
+          "autoincrement": false,
+          "name": "regno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "routeid": {
+          "autoincrement": false,
+          "name": "routeid",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_studentreport": {
+      "name": "tbl_studentreport",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sec": {
+          "autoincrement": false,
+          "name": "sec",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "roll": {
+          "autoincrement": false,
+          "name": "roll",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "gender": {
+          "autoincrement": false,
+          "name": "gender",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fname": {
+          "autoincrement": false,
+          "name": "fname",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "address": {
+          "autoincrement": false,
+          "name": "address",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mobile": {
+          "autoincrement": false,
+          "name": "mobile",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r1": {
+          "autoincrement": false,
+          "name": "r1",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_switches": {
+      "name": "tbl_switches",
+      "columns": {
+        "frmmod": {
+          "autoincrement": false,
+          "name": "frmmod",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "opt": {
+          "autoincrement": false,
+          "name": "opt",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "autoincrement": false,
+          "name": "status",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_tablereport": {
+      "name": "tbl_tablereport",
+      "columns": {
+        "sl": {
+          "autoincrement": false,
+          "name": "sl",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r1": {
+          "autoincrement": false,
+          "name": "r1",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r2": {
+          "autoincrement": false,
+          "name": "r2",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r3": {
+          "autoincrement": false,
+          "name": "r3",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r4": {
+          "autoincrement": false,
+          "name": "r4",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r5": {
+          "autoincrement": false,
+          "name": "r5",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r6": {
+          "autoincrement": false,
+          "name": "r6",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r7": {
+          "autoincrement": false,
+          "name": "r7",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r8": {
+          "autoincrement": false,
+          "name": "r8",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r9": {
+          "autoincrement": false,
+          "name": "r9",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r10": {
+          "autoincrement": false,
+          "name": "r10",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r11": {
+          "autoincrement": false,
+          "name": "r11",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r12": {
+          "autoincrement": false,
+          "name": "r12",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r13": {
+          "autoincrement": false,
+          "name": "r13",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r14": {
+          "autoincrement": false,
+          "name": "r14",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r15": {
+          "autoincrement": false,
+          "name": "r15",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r16": {
+          "autoincrement": false,
+          "name": "r16",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r17": {
+          "autoincrement": false,
+          "name": "r17",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r18": {
+          "autoincrement": false,
+          "name": "r18",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r19": {
+          "autoincrement": false,
+          "name": "r19",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r20": {
+          "autoincrement": false,
+          "name": "r20",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r21": {
+          "autoincrement": false,
+          "name": "r21",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r22": {
+          "autoincrement": false,
+          "name": "r22",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r23": {
+          "autoincrement": false,
+          "name": "r23",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r24": {
+          "autoincrement": false,
+          "name": "r24",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r25": {
+          "autoincrement": false,
+          "name": "r25",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r26": {
+          "autoincrement": false,
+          "name": "r26",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r27": {
+          "autoincrement": false,
+          "name": "r27",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r28": {
+          "autoincrement": false,
+          "name": "r28",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r30": {
+          "autoincrement": false,
+          "name": "r30",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r31": {
+          "autoincrement": false,
+          "name": "r31",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r32": {
+          "autoincrement": false,
+          "name": "r32",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r33": {
+          "autoincrement": false,
+          "name": "r33",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r34": {
+          "autoincrement": false,
+          "name": "r34",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r35": {
+          "autoincrement": false,
+          "name": "r35",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "r36": {
+          "autoincrement": false,
+          "name": "r36",
+          "type": "longblob",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_tc": {
+      "name": "tbl_tc",
+      "columns": {
+        "tcno": {
+          "autoincrement": false,
+          "name": "tcno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "sname": {
+          "autoincrement": false,
+          "name": "sname",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fname": {
+          "autoincrement": false,
+          "name": "fname",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mname": {
+          "autoincrement": false,
+          "name": "mname",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nationality": {
+          "autoincrement": false,
+          "name": "nationality",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "scst": {
+          "autoincrement": false,
+          "name": "scst",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dofa": {
+          "autoincrement": false,
+          "name": "dofa",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dofaclass": {
+          "autoincrement": false,
+          "name": "dofaclass",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dob": {
+          "autoincrement": false,
+          "name": "dob",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dobinwords": {
+          "autoincrement": false,
+          "name": "dobinwords",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lastclass": {
+          "autoincrement": false,
+          "name": "lastclass",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lastclassinwords": {
+          "autoincrement": false,
+          "name": "lastclassinwords",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lastschbrd": {
+          "autoincrement": false,
+          "name": "lastschbrd",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "failed": {
+          "autoincrement": false,
+          "name": "failed",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "subjectstudied": {
+          "autoincrement": false,
+          "name": "subjectstudied",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "qualiforpromo": {
+          "autoincrement": false,
+          "name": "qualiforpromo",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "promoclass": {
+          "autoincrement": false,
+          "name": "promoclass",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "promoclassinwords": {
+          "autoincrement": false,
+          "name": "promoclassinwords",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "monthuptopaid": {
+          "autoincrement": false,
+          "name": "monthuptopaid",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feeconcession": {
+          "autoincrement": false,
+          "name": "feeconcession",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "totworkdays": {
+          "autoincrement": false,
+          "name": "totworkdays",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "totworkdayspresent": {
+          "autoincrement": false,
+          "name": "totworkdayspresent",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ncc": {
+          "autoincrement": false,
+          "name": "ncc",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "games": {
+          "autoincrement": false,
+          "name": "games",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "genconduct": {
+          "autoincrement": false,
+          "name": "genconduct",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "doacerti": {
+          "autoincrement": false,
+          "name": "doacerti",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "doicerti": {
+          "autoincrement": false,
+          "name": "doicerti",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "reason": {
+          "autoincrement": false,
+          "name": "reason",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "remarks": {
+          "autoincrement": false,
+          "name": "remarks",
+          "type": "varchar(70)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "prepby": {
+          "autoincrement": false,
+          "name": "prepby",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "checkby": {
+          "autoincrement": false,
+          "name": "checkby",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "barcodepath": {
+          "autoincrement": false,
+          "name": "barcodepath",
+          "type": "varchar(300)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_testdate": {
+      "name": "tbl_testdate",
+      "columns": {
+        "etid": {
+          "autoincrement": false,
+          "name": "etid",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "class": {
+          "autoincrement": false,
+          "name": "class",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "testdate": {
+          "autoincrement": false,
+          "name": "testdate",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "testtime": {
+          "autoincrement": false,
+          "name": "testtime",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "subject": {
+          "autoincrement": false,
+          "name": "subject",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "venue": {
+          "autoincrement": false,
+          "name": "venue",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "status": {
+          "autoincrement": false,
+          "name": "status",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_transcompsetup": {
+      "name": "tbl_transcompsetup",
+      "columns": {
+        "compname": {
+          "autoincrement": false,
+          "name": "compname",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "owner": {
+          "autoincrement": false,
+          "name": "owner",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "address": {
+          "autoincrement": false,
+          "name": "address",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "contact1": {
+          "autoincrement": false,
+          "name": "contact1",
+          "type": "varchar(12)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "contact2": {
+          "autoincrement": false,
+          "name": "contact2",
+          "type": "varchar(12)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "email": {
+          "autoincrement": false,
+          "name": "email",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "website": {
+          "autoincrement": false,
+          "name": "website",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "setup_date": {
+          "autoincrement": false,
+          "name": "setup_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_transportfee": {
+      "name": "tbl_transportfee",
+      "columns": {
+        "admno": {
+          "autoincrement": false,
+          "name": "admno",
+          "type": "varchar(16)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "apr": {
+          "autoincrement": false,
+          "name": "apr",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "may": {
+          "autoincrement": false,
+          "name": "may",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "jun": {
+          "autoincrement": false,
+          "name": "jun",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "jul": {
+          "autoincrement": false,
+          "name": "jul",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "aug": {
+          "autoincrement": false,
+          "name": "aug",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "sep": {
+          "autoincrement": false,
+          "name": "sep",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "oct": {
+          "autoincrement": false,
+          "name": "oct",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nov": {
+          "autoincrement": false,
+          "name": "nov",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "dece": {
+          "autoincrement": false,
+          "name": "dece",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "jan": {
+          "autoincrement": false,
+          "name": "jan",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "feb": {
+          "autoincrement": false,
+          "name": "feb",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "mar": {
+          "autoincrement": false,
+          "name": "mar",
+          "type": "float(7,2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "session": {
+          "autoincrement": false,
+          "name": "session",
+          "type": "varchar(9)",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_userlog": {
+      "name": "tbl_userlog",
+      "columns": {
+        "sr": {
+          "autoincrement": false,
+          "name": "sr",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "uid": {
+          "autoincrement": false,
+          "name": "uid",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "date": {
+          "autoincrement": false,
+          "name": "date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "logintime": {
+          "autoincrement": false,
+          "name": "logintime",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "logouttime": {
+          "autoincrement": false,
+          "name": "logouttime",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "duration": {
+          "autoincrement": false,
+          "name": "duration",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {
+        "tbl_userlog_sr": {
+          "name": "tbl_userlog_sr",
+          "columns": [
+            "sr"
+          ]
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_userroles": {
+      "name": "tbl_userroles",
+      "columns": {
+        "user": {
+          "autoincrement": false,
+          "name": "user",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "menuname": {
+          "autoincrement": false,
+          "name": "menuname",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    },
+    "tbl_vehiclesetup": {
+      "name": "tbl_vehiclesetup",
+      "columns": {
+        "vid": {
+          "autoincrement": false,
+          "name": "vid",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "vno": {
+          "autoincrement": false,
+          "name": "vno",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "vtitle": {
+          "autoincrement": false,
+          "name": "vtitle",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "vdriver": {
+          "autoincrement": false,
+          "name": "vdriver",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "vconductor": {
+          "autoincrement": false,
+          "name": "vconductor",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "mob": {
+          "autoincrement": false,
+          "name": "mob",
+          "type": "varchar(11)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraint": {}
+    }
+  },
+  "views": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "tables": {},
+    "indexes": {}
+  }
+}

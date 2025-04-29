@@ -1,0 +1,1 @@
+ALTER TABLE `tbl_tablereport` DROP COLUMN `r36`;

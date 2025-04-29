@@ -1,0 +1,107 @@
+# Node.js - Eduware related
+/fvm
+eduware/node_modules/
+eduware/npm-debug.log
+eduware/yarn-error.log
+eduware/package-lock.json
+eduware/.env
+eduware/coverage/
+eduware/.nyc_output/
+eduware/dist/
+eduware/build/
+eduware/.temp/
+eduware/.tmp/
+eduware/pids/
+eduware/*.pid
+eduware/*.seed
+eduware/*.pid.lock
+eduware/report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+eduware/*.class
+eduware/*.log
+eduware/*.pyc
+eduware/*.swp
+eduware/.atom/
+eduware/.build/
+eduware/.buildlog/
+eduware/.history/
+eduware/.svn/
+eduware/.swiftpm/
+eduware/migrate_working_dir/
+
+# Flutter - Eduwareflutter related
+eduwareflutter/.dart_tool/
+eduwareflutter/.packages
+eduwareflutter/.pub/
+eduwareflutter/build/
+eduwareflutter/.flutter-plugins
+eduwareflutter/.flutter-plugins-dependencies
+eduwareflutter/.pub-cache/
+eduwareflutter/ios/Flutter/.last_build_id
+eduwareflutter/**/doc/api/
+eduwareflutter/app.*.symbols
+eduwareflutter/app.*.map.json
+
+# Android Studio build artifacts
+eduwareflutter/android/app/debug/
+eduwareflutter/android/app/profile/
+eduwareflutter/android/app/release/
+
+# Miscellaneous for both projects
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Tests
+coverage/
+.nyc_output/
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# IntelliJ related
+eduwareflutter/*.iml
+eduwareflutter/*.ipr
+eduwareflutter/*.iws
+eduwareflutter/.idea/
+
+# Flutter/Dart/Pub related
+eduwareflutter/**/doc/api/
+eduwareflutter/**/ios/Flutter/.last_build_id
+eduwareflutter/.dart_tool/
+eduwareflutter/.flutter-plugins
+eduwareflutter/.flutter-plugins-dependencies
+eduwareflutter/.pub-cache/
+eduwareflutter/.pub/
+eduwareflutter/build/
