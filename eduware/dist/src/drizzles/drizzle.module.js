@@ -6,9 +6,9 @@ const mysql2_1 = require("drizzle-orm/mysql2");
 const constant_1 = require("../constant");
 exports.DRIZZLE_CONNECTION = {
     provide: constant_1.DRIZZLE_CLIENT,
-    useFactory: async (config) => {
+    useFactory: async () => {
         const databaseUrl = process.env.DATABASE_URL;
-        const client = await (0, mysql2_1.drizzle)(databaseUrl);
+        const client = (0, mysql2_1.drizzle)(databaseUrl);
         return client;
     },
 };

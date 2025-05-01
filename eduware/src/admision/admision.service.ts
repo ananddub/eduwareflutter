@@ -18,13 +18,19 @@ export class AdmisionService {
         return 'This action adds a new admision';
     }
 
-    findAll(
-        cl: string = 'X',
-        start: number = 0,
-        end: number = 30,
-        roll: number = -1,
-        session: string = '2024-2025',
-    ) {
+    findAll({
+        cl = 'X',
+        start = 0,
+        end = 30,
+        roll = -1,
+        session = '2024-2025',
+    }: {
+        cl: string;
+        start: number;
+        end: number;
+        roll: number;
+        session: string;
+    }) {
         return this.db
             .select()
             .from(tblAdmission)

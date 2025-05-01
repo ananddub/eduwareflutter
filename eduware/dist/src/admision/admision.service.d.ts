@@ -7,7 +7,13 @@ export declare class AdmisionService {
         $client: AnyMySql2Connection;
     });
     create(createAdmisionDto: CreateAdmisionDto): string;
-    findAll(cl?: string, start?: number, end?: number, roll?: number, session?: string): Omit<import("drizzle-orm/mysql-core").MySqlSelectBase<"tbl_admission", {
+    findAll({ cl, start, end, roll, session, }: {
+        cl: string;
+        start: number;
+        end: number;
+        roll: number;
+        session: string;
+    }): Omit<import("drizzle-orm/mysql-core").MySqlSelectBase<"tbl_admission", {
         regno: import("drizzle-orm/mysql-core").MySqlColumn<{
             name: "regno";
             tableName: "tbl_admission";

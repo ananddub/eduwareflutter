@@ -24,11 +24,17 @@ let AdmisionController = class AdmisionController {
     create(createAdmisionDto) {
         return this.admisionService.create(createAdmisionDto);
     }
-    async findAll(cl = 'A', session = '2024-2025', start = 0, end = 30, roll = -1) {
+    async findAll(cl = 'X', session = '2024-2025', start = 0, end = 30, roll = -1) {
         return {
             status: 200,
             message: 'success',
-            data: await this.admisionService.findAll(),
+            data: await this.admisionService.findAll({
+                cl,
+                start,
+                end,
+                roll,
+                session,
+            }),
         };
     }
     async findOne(id) {

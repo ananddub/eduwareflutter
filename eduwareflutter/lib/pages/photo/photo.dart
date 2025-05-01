@@ -1,6 +1,8 @@
-import 'package:dio/dio.dart';
+import 'package:eduwareflutter/constant/routes.dart';
+import 'package:eduwareflutter/constant/server.dart';
+import 'package:featurehub_sse_client/featurehub_sse_client.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 
 class PhotoGraphy extends StatefulWidget {
   const PhotoGraphy({super.key});
@@ -13,10 +15,34 @@ class PhotoGraphy extends StatefulWidget {
 class _PhotoGraphyState extends State<PhotoGraphy> {
   late Future<List> data;
   final ScrollController _scrollController = ScrollController();
-  bool _expanded = true;
+  final TextEditingController _searchController = TextEditingController();
+  String _searchQuery = '';
+  String selectedClass = 'X';
+  String selectedSection = 'A';
+  List<String> classOptions = [
+    'I',
+    'II',
+    'III',
+    'IV',
+    'V',
+    'VI',
+    'VII',
+    'VIII',
+    'IX',
+    'X',
+  ];
+  bool _expanded = false;
   void getData() {
-    data = Dio().get('http://192.168.1.5:4000/admision').then((response) {
-      return response.data["data"];
+    data = getAdmision(classId: selectedClass, sectionId: selectedSection);
+  }
+
+  Future<void> event() async {
+    EventSource eventSource = await EventSource.connect("$BaseUrl/photo/event");
+    eventSource.listen((event) {
+      debugPrint('event data ${event.data}');
+      setState(() {
+        getData();
+      });
     });
   }
 
@@ -24,6 +50,11 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
   void initState() {
     super.initState();
     getData();
+    event();
+  }
+
+  void navigateToAdmissionDetails(data) {
+    context.push(ApiRoute.photodashboard, extra: data['tblAdmission']);
   }
 
   Widget _buildStatChip(
@@ -45,13 +76,52 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            Text(
-              count,
-              style: TextStyle(
-                fontSize: 24,
-                color: color,
-                fontWeight: FontWeight.bold,
-              ),
+            FutureBuilder(
+              future: data,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return SizedBox(
+                    width: 25,
+                    height: 25,
+                    child: CircularProgressIndicator(
+                      color: Colors.blue,
+                      strokeWidth: 1,
+                    ),
+                  );
+                } else if (snapshot.hasError) {
+                } else if (snapshot.hasData) {
+                  var total = snapshot.data!.length;
+                  if (label == 'Completed') {
+                    var completed = 0;
+                    for (var event in snapshot.data!) {
+                      if (event!["tblPhoto"] != null) {
+                        completed++;
+                      }
+                    }
+                    debugPrint('Completed: $completed');
+                    total = completed;
+                  } else if (label == 'Pending') {
+                    var pending = 0;
+                    for (var event in snapshot.data!) {
+                      if (event!["tblPhoto"] == null) {
+                        pending++;
+                      }
+                    }
+                    debugPrint('Pending: $pending');
+                    total = pending;
+                  }
+                  return Text(
+                    total.toString(),
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: color,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  );
+                }
+
+                return Text('Error');
+              },
             ),
           ],
         ),
@@ -62,6 +132,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
   @override
   void dispose() {
     _scrollController.dispose();
+    _searchController.dispose();
     super.dispose();
   }
 
@@ -73,8 +144,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
         controller: _scrollController,
         physics: const BouncingScrollPhysics(),
         slivers: [
-          // App Bar
-          _AppBar(), // Stats Section
+          _AppBar(),
           SliverToBoxAdapter(
             child: Container(
               margin: const EdgeInsets.fromLTRB(16, 16, 16, 8),
@@ -100,46 +170,270 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
             ),
           ),
 
-          // Section Title
           SliverToBoxAdapter(
             child: Container(
-              margin: const EdgeInsets.fromLTRB(20, 24, 20, 8),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              margin: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     'Student List',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey[800],
                     ),
                   ),
+                  const SizedBox(height: 8),
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 6,
-                    ),
+                    padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.indigo.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.indigo.withOpacity(0.1),
+                          spreadRadius: 1,
+                          blurRadius: 6,
+                          offset: const Offset(0, 2),
+                        ),
+                      ],
                     ),
-                    child: Row(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(
-                          Icons.filter_list,
-                          size: 16,
-                          color: Colors.indigo[700],
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.filter_alt_rounded,
+                              color: Colors.indigo[700],
+                              size: 18,
+                            ),
+                            const SizedBox(width: 6),
+                            Text(
+                              'Filters',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.indigo[700],
+                                fontSize: 14,
+                              ),
+                            ),
+                            const Spacer(),
+                            IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  _expanded = !_expanded;
+                                });
+                              },
+                              icon: Icon(
+                                _expanded
+                                    ? Icons.expand_less
+                                    : Icons.expand_more,
+                                color: Colors.indigo[700],
+                                size: 20,
+                              ),
+                              padding: EdgeInsets.zero,
+                              constraints: const BoxConstraints(),
+                            ),
+                          ],
                         ),
-                        const SizedBox(width: 4),
-                        Text(
-                          'Filter',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.indigo[700],
+                        if (_expanded) ...[
+                          const SizedBox(height: 12),
+                          // Search field
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            child: TextField(
+                              controller: _searchController,
+                              decoration: InputDecoration(
+                                isDense: true,
+                                hintText: 'Search by name or reg. no.',
+                                hintStyle: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.grey[500],
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                  borderSide: BorderSide(
+                                    color: Colors.grey[300]!,
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                  borderSide: BorderSide(
+                                    color: Colors.indigo[700]!,
+                                  ),
+                                ),
+                                prefixIcon: Icon(
+                                  Icons.search,
+                                  size: 20,
+                                  color: Colors.indigo[700],
+                                ),
+                              ),
+                              style: const TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              onChanged: (value) {
+                                setState(() {
+                                  _searchQuery = value;
+                                });
+                              },
+                            ),
                           ),
-                        ),
+                          const SizedBox(height: 12),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Class:',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.grey[800],
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 6),
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 10,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[50],
+                                        borderRadius: BorderRadius.circular(6),
+                                        border: Border.all(
+                                          color: Colors.grey.withOpacity(0.3),
+                                        ),
+                                      ),
+                                      child: DropdownButtonHideUnderline(
+                                        child: DropdownButton<String>(
+                                          value: selectedClass,
+                                          isExpanded: true,
+                                          icon: Icon(
+                                            Icons.arrow_drop_down,
+                                            color: Colors.indigo[700],
+                                            size: 20,
+                                          ),
+                                          items:
+                                              classOptions
+                                                  .map(
+                                                    (roman) => DropdownMenuItem(
+                                                      value: roman,
+                                                      child: Text(
+                                                        roman,
+                                                        style: const TextStyle(
+                                                          fontSize: 13,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  )
+                                                  .toList(),
+                                          onChanged: (value) {
+                                            setState(() {
+                                              selectedClass = value!;
+                                            });
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(width: 12),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Section:',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.grey[800],
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 6),
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 10,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: Colors.grey[50],
+                                        borderRadius: BorderRadius.circular(6),
+                                        border: Border.all(
+                                          color: Colors.grey.withOpacity(0.3),
+                                        ),
+                                      ),
+                                      child: DropdownButtonHideUnderline(
+                                        child: DropdownButton<String>(
+                                          value: selectedSection,
+                                          isExpanded: true,
+                                          icon: Icon(
+                                            Icons.arrow_drop_down,
+                                            color: Colors.indigo[700],
+                                            size: 20,
+                                          ),
+                                          items:
+                                              ['A', 'B', 'C', 'D']
+                                                  .map(
+                                                    (section) =>
+                                                        DropdownMenuItem(
+                                                          value: section,
+                                                          child: Text(
+                                                            section,
+                                                            style:
+                                                                const TextStyle(
+                                                                  fontSize: 13,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                  )
+                                                  .toList(),
+                                          onChanged: (value) {
+                                            setState(() {
+                                              selectedSection = value!;
+                                            });
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 12),
+                          SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  getData();
+                                });
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.indigo,
+                                foregroundColor: Colors.white,
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 8,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                elevation: 0,
+                              ),
+                              child: const Text(
+                                'Apply Filter',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ],
                     ),
                   ),
@@ -148,7 +442,6 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
             ),
           ),
 
-          // Student List
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 0),
             sliver: FutureBuilder<List>(
@@ -209,8 +502,51 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                 }
 
                 if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                  // Filter data based on search query
+                  var filteredData = snapshot.data!;
+                  if (_searchQuery.isNotEmpty) {
+                    filteredData =
+                        snapshot.data!.where((item) {
+                          var admission = item['tblAdmission'];
+                          var name =
+                              admission['name']?.toString().toLowerCase() ?? '';
+                          var regno =
+                              admission['regno']?.toString().toLowerCase() ??
+                              '';
+                          var query = _searchQuery.toLowerCase();
+                          return name.contains(query) || regno.contains(query);
+                        }).toList();
+                  }
+
+                  if (filteredData.isEmpty) {
+                    return SliverFillRemaining(
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.search_off,
+                              color: Colors.grey[400],
+                              size: 64,
+                            ),
+                            const SizedBox(height: 16),
+                            Text(
+                              'No students found',
+                              style: TextStyle(
+                                color: Colors.grey[600],
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }
+
                   return SliverList(
                     delegate: SliverChildBuilderDelegate((context, index) {
+                      var data = filteredData[index]['tblAdmission'];
                       return Container(
                         margin: const EdgeInsets.only(bottom: 1),
                         decoration: BoxDecoration(
@@ -229,7 +565,9 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                           color: Colors.transparent,
                           borderRadius: BorderRadius.circular(16),
                           child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              navigateToAdmissionDetails(snapshot.data![index]);
+                            },
                             borderRadius: BorderRadius.circular(0),
                             child: Padding(
                               padding: const EdgeInsets.symmetric(
@@ -239,8 +577,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                               child: Row(
                                 children: [
                                   Hero(
-                                    tag:
-                                        'student-${snapshot.data![index]['regno'] ?? ''}',
+                                    tag: 'student-${data['regno'] ?? ''}',
                                     child: Container(
                                       width: 55,
                                       height: 55,
@@ -263,7 +600,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                                       ),
                                       child: ClipOval(
                                         child: Image.network(
-                                          snapshot.data![index]['image'] ?? '',
+                                          ImageUrl(data['admno']),
                                           fit: BoxFit.contain,
                                           errorBuilder: (
                                             context,
@@ -292,8 +629,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          snapshot.data![index]['name'] ??
-                                              'No name',
+                                          data['name'] ?? 'No name',
                                           style: const TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
@@ -302,7 +638,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                                         ),
                                         const SizedBox(height: 6),
                                         Text(
-                                          'Admission No: ${snapshot.data![index]['admno'] ?? 'N/A'}',
+                                          'Admission No: ${data['admno'] ?? 'N/A'}',
                                           style: TextStyle(
                                             fontSize: 14,
                                             color: Colors.grey[700],
@@ -339,7 +675,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                                                   ),
                                                   const SizedBox(width: 4),
                                                   Text(
-                                                    '${snapshot.data![index]['class'] ?? 'N/A'}',
+                                                    '${data['class'] ?? 'N/A'}',
                                                     style: TextStyle(
                                                       fontSize: 13,
                                                       fontWeight:
@@ -377,7 +713,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                                                   ),
                                                   const SizedBox(width: 4),
                                                   Text(
-                                                    '${snapshot.data![index]['roll'].toString() ?? 'N/A'}',
+                                                    '${data['roll'].toString() ?? 'N/A'}',
                                                     style: TextStyle(
                                                       fontSize: 13,
                                                       fontWeight:
@@ -415,7 +751,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                                                   ),
                                                   const SizedBox(width: 4),
                                                   Text(
-                                                    '${snapshot.data![index]['section'] ?? 'N/A'}',
+                                                    '${data['section'] ?? 'N/A'}',
                                                     style: TextStyle(
                                                       fontSize: 13,
                                                       fontWeight:
@@ -437,7 +773,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                           ),
                         ),
                       );
-                    }, childCount: snapshot.data!.length),
+                    }, childCount: filteredData.length),
                   );
                 }
 
@@ -555,46 +891,6 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
       backgroundColor: Colors.indigo,
       leading: const BackButton(color: Colors.white),
       actions: [
-        AnimatedContainer(
-          duration: const Duration(milliseconds: 300),
-          alignment: Alignment.centerLeft,
-          height: 40,
-          decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(color: Colors.transparent)),
-            color:
-                this._expanded
-                    ? Colors.indigo.shade400
-                    : Colors.white.withOpacity(0.0),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          width: this._expanded ? 300 : 40,
-          child: TextField(
-            style: TextStyle(color: Colors.white),
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.transparent,
-              hintText: "Enter your roll",
-              hintStyle: TextStyle(color: Colors.white.withOpacity(0.5)),
-              border: InputBorder.none,
-              prefixIcon: IconButton(
-                onPressed: () {
-                  setState(() {
-                    this._expanded = !this._expanded;
-                  });
-                },
-                icon: const Icon(Icons.search, color: Colors.white),
-                tooltip: 'Search',
-              ),
-              suffixIcon:
-                  this._expanded
-                      ? IconButton(
-                        icon: Icon(Icons.forward, color: Colors.white),
-                        onPressed: () {},
-                      )
-                      : Text(""),
-            ),
-          ),
-        ),
         IconButton(
           onPressed: () {
             setState(() {

@@ -24,7 +24,7 @@ let AdmisionService = class AdmisionService {
     create(createAdmisionDto) {
         return 'This action adds a new admision';
     }
-    findAll(cl = 'X', start = 0, end = 30, roll = -1, session = '2024-2025') {
+    findAll({ cl = 'X', start = 0, end = 30, roll = -1, session = '2024-2025', }) {
         return this.db
             .select()
             .from(schema_1.tblAdmission)

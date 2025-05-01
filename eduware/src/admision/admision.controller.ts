@@ -23,7 +23,7 @@ export class AdmisionController {
 
     @Get()
     async findAll(
-        @Query('class') cl: string = 'A',
+        @Query('class') cl: string = 'X',
         @Query('session') session: string = '2024-2025',
         @Query('start') start: number = 0,
         @Query('end') end: number = 30,
@@ -32,7 +32,13 @@ export class AdmisionController {
         return {
             status: 200,
             message: 'success',
-            data: await this.admisionService.findAll(),
+            data: await this.admisionService.findAll({
+                cl,
+                start,
+                end,
+                roll,
+                session,
+            }),
         };
     }
 

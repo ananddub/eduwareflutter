@@ -1,4 +1,5 @@
 import 'package:eduwareflutter/pages/photo/photo.dart';
+import 'package:eduwareflutter/pages/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,13 +12,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
+
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-      home: PhotoGraphy(),
+      routerConfig: AppRouter().router,
     );
   }
 }
