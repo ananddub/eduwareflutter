@@ -24,10 +24,12 @@ export class AdmisionService {
     async findAll({
         cl = 'X',
         roll = -1,
+        section = 'A',
         session = '2024-2025',
     }: {
         cl: string;
         start: number;
+        section: string;
         end: number;
         roll: number;
         session: string;
@@ -44,8 +46,10 @@ export class AdmisionService {
                     eq(tblAdmission.class, cl),
                     eq(tblAdmission.session, session),
                     gte(tblAdmission.roll, roll),
+                    eq(tblAdmission.section, section),
                 ),
-            );
+            )
+            .orderBy(tblAdmission.roll);
     }
 
     findOne(id: string) {
