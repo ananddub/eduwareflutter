@@ -9,6 +9,6 @@ import { AdmisionModule } from './admision/admision.module';
 @Module({
     imports: [PhotographyModule, AdmisionModule],
     controllers: [AppController],
-    providers: [AppService, DRIZZLE_CONNECTION],
+    providers: [AppService],
 })
 export class AppModule {}

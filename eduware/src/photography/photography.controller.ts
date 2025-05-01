@@ -10,15 +10,15 @@ import {
     UploadedFiles,
     Sse,
     Query,
+    NotFoundException,
+    Headers,
 } from '@nestjs/common';
 import { PhotographyService } from './photography.service';
-import { CreatePhotographyDto } from './dto/create-photography.dto';
 import { UpdatePhotographyDto } from './dto/update-photography.dto';
 import { FilesInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { extname } from 'path';
 import { STATUS_CODES } from 'http';
-import { Observable } from 'rxjs';
 
 @Controller('photo')
 export class PhotographyController {
@@ -30,56 +30,68 @@ export class PhotographyController {
             storage: diskStorage({
                 destination: './uploads',
                 filename: (req, file, callback) => {
-                    const uniqueSuffix =
-                        Date.now() + '-' + Math.round(Math.random() * 1e9);
-                    const ext = extname(file.originalname);
-                    callback(null, `${file.fieldname}-${uniqueSuffix}${ext}`);
+                    const filename = req.header('admno');
+                    if (!file || !filename) {
+                        console.log('File or admno not found in Header');
+                        return callback(
+                            new NotFoundException(
+                                `File or admno not found in Header  `,
+                            ),
+                            null,
+                        );
+                    }
+                    callback(null, `${filename}.jpg`);
                 },
             }),
             limits: {
                 fileSize: 100 * 1024 * 1024,
             },
-            fileFilter: (req, file, cb) => {
-                if (!file.mimetype.match(/\/(jpg|jpeg|png)$/)) {
-                    return cb(
-                        new Error('Only image files are allowed!'),
-                        false,
-                    );
-                }
-                cb(null, true);
-            },
         }),
     )
     async create(
         @UploadedFiles() files: Express.Multer.File[],
-        @Body() createPhotographyDto: CreatePhotographyDto,
+        @Headers() header,
     ) {
         return {
             status: STATUS_CODES.OK,
             message: 'success',
             data: await this.photographyService.create(
-                createPhotographyDto,
+                {
+                    admno: header.admno,
+                },
                 files[0],
             ),
         };
     }
 
+    // cl = 'X',
+    //         roll = -1,
+    //         section = '',
+    //         session = '2024-2025',
     @Get()
-    async findAll(@Query('start') start: number, @Query('end') end: number) {
-        if (end == 0) end = 30;
+    async findAll(
+        @Query('class') classId: string,
+        @Query('section') section: string,
+        @Query('session') session: string,
+    ) {
         return {
             status: STATUS_CODES.OK,
             message: 'success',
-            data: await this.photographyService.findAll(start, end),
+            data: await this.photographyService.findAll({
+                cl: classId,
+                roll: -1,
+                section,
+                session,
+            }),
         };
     }
 
     @Get('find/:id')
-    async findOne(@Param('id') id: string) {
+    async findOne(@Param('id') id: string, @Query('session') session: string) {
         return {
             status: STATUS_CODES.OK,
             message: 'success',
-            data: await this.photographyService.findOne(id),
+            data: await this.photographyService.findOne(id, session),
         };
     }
 

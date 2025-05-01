@@ -2,9 +2,9 @@ import { Inject, Injectable } from '@nestjs/common';
 import { CreatePhotographyDto } from './dto/create-photography.dto';
 import { UpdatePhotographyDto } from './dto/update-photography.dto';
 import { DRIZZLE_CLIENT } from 'src/constant';
-import { tbl_photo } from 'src/db/schema';
+import { tblPhoto, tblAdmission } from 'src/db/schema';
 import { AnyMySql2Connection, MySql2Database } from 'drizzle-orm/mysql2';
-import { eq } from 'drizzle-orm';
+import { and, eq, gte } from 'drizzle-orm';
 import { Subject, Observable } from 'rxjs';
 import { HttpException, HttpStatus } from '@nestjs/common';
 
@@ -43,20 +43,49 @@ export class PhotographyService {
                     HttpStatus.BAD_REQUEST,
                 );
             }
+            const dup = await this.db
+                .select()
+                .from(tblPhoto)
+                .where(eq(tblPhoto.admno, admno));
+            let newPhotography;
+            if (dup.length > 0) {
+                newPhotography = await this.db
+                    .update(tblPhoto)
+                    .set({
+                        admno: createPhotographyDto.admno,
+                        name: file.fieldname,
+                        url: file.path,
+                        size: file.size,
+                        type: file.mimetype,
+                    })
+                    .where(eq(tblPhoto.admno, admno));
 
-            const newPhotography = await this.db.insert(tbl_photo).values({
-                admno: createPhotographyDto.admno,
-                name: file.fieldname,
-                url: file.path,
-                size: file.size,
-                type: file.mimetype,
-            });
+                // Emit an event after successful creation
+                this.eventSubject.next({
+                    action: 'update',
+                    data: {
+                        admno,
+                        newPhotography,
+                    },
+                });
+            } else {
+                newPhotography = await this.db.insert(tblPhoto).values({
+                    admno: createPhotographyDto.admno,
+                    name: file.fieldname,
+                    url: file.path,
+                    size: file.size,
+                    type: file.mimetype,
+                });
 
-            // Emit an event after successful creation
-            this.eventSubject.next({
-                action: 'created',
-                data: newPhotography,
-            });
+                // Emit an event after successful creation
+                this.eventSubject.next({
+                    action: 'created',
+                    data: {
+                        admno,
+                        newPhotography,
+                    },
+                });
+            }
 
             return {
                 message: 'Photography created successfully.',
@@ -70,15 +99,34 @@ export class PhotographyService {
         }
     }
 
-    async findAll(start: number = 0, end: number = 30) {
+    async findAll({
+        cl = 'X',
+        roll = -1,
+        section = '',
+        session = '2024-2025',
+    }: {
+        cl: string;
+        roll: number;
+        section: string;
+        session: string;
+    }) {
         try {
-            const photos = await this.db
+            const value = await this.db
                 .select()
-                .from(tbl_photo)
-                .limit(end - start)
-                .offset(start);
-            return photos;
-        } catch (error) {
+                .from(tblAdmission)
+                .innerJoin(tblPhoto, eq(tblAdmission.admno, tblPhoto.admno))
+                .where(
+                    and(
+                        eq(tblAdmission.class, cl),
+                        eq(tblAdmission.session, session),
+                        gte(tblAdmission.roll, roll),
+                        section === ''
+                            ? undefined
+                            : eq(tblAdmission.section, section),
+                    ),
+                );
+            return value;
+        } catch {
             throw new HttpException(
                 'Failed to fetch photography records.',
                 HttpStatus.INTERNAL_SERVER_ERROR,
@@ -86,7 +134,7 @@ export class PhotographyService {
         }
     }
 
-    async findOne(id: string) {
+    async findOne(id: string, session: string = '2022-2025') {
         try {
             if (!id) {
                 throw new HttpException(
@@ -94,11 +142,16 @@ export class PhotographyService {
                     HttpStatus.BAD_REQUEST,
                 );
             }
-
             const photo = await this.db
                 .select()
-                .from(tbl_photo)
-                .where(eq(tbl_photo.admno, id));
+                .from(tblAdmission)
+                .innerJoin(tblPhoto, eq(tblPhoto.admno, tblAdmission.admno))
+                .where(
+                    and(
+                        eq(tblAdmission.session, session),
+                        eq(tblPhoto.admno, id),
+                    ),
+                );
 
             if (!photo || photo.length === 0) {
                 throw new HttpException(
@@ -106,7 +159,6 @@ export class PhotographyService {
                     HttpStatus.NOT_FOUND,
                 );
             }
-
             return { data: photo };
         } catch (error) {
             throw new HttpException(
@@ -137,14 +189,14 @@ export class PhotographyService {
             }
 
             const updatedPhotography = await this.db
-                .update(tbl_photo)
+                .update(tblPhoto)
                 .set({
                     name: file.fieldname,
                     url: file.path,
                     size: file.size,
                     type: file.mimetype,
                 })
-                .where(eq(tbl_photo.admno, id));
+                .where(eq(tblPhoto.admno, id));
 
             if (!updatedPhotography) {
                 throw new HttpException(
@@ -181,8 +233,8 @@ export class PhotographyService {
             }
 
             const deletedPhotography = await this.db
-                .delete(tbl_photo)
-                .where(eq(tbl_photo.admno, id));
+                .delete(tblPhoto)
+                .where(eq(tblPhoto.admno, id));
 
             if (!deletedPhotography) {
                 throw new HttpException(

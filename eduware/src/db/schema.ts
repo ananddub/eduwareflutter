@@ -1,7 +1,5 @@
 import {
     mysqlTable,
-    mysqlSchema,
-    AnyMySqlColumn,
     varchar,
     int,
     date,
@@ -15,8 +13,8 @@ import {
 } from 'drizzle-orm/mysql-core';
 import { sql } from 'drizzle-orm';
 
-export const tbl_photo = mysqlTable('tbl_photo', {
-    admno: varchar('admno', { length: 36 }).notNull(),
+export const tblPhoto = mysqlTable('tbl_photo', {
+    admno: varchar('admno', { length: 36 }).notNull().unique(),
     name: varchar('name', { length: 255 }).notNull(),
     url: varchar('url', { length: 255 }).notNull(),
     size: int('size').notNull(),
