@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
-// const BaseUrl = 'http://95.111.232.91:4000';
-const BaseUrl = 'http://192.168.1.5:4000';
+const BaseUrl = 'http://95.111.232.91:4000';
+// const BaseUrl = 'http://192.168.1.5:4000';
 Dio CustomDios() {
   final dio = Dio();
   dio.options.baseUrl = BaseUrl;
