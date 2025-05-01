@@ -90,10 +90,25 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                   );
                 } else if (snapshot.hasError) {
                 } else if (snapshot.hasData) {
-                  var total = snapshot.data!.length;
+                  // Filter data based on search query
+                  var filteredData = snapshot.data!;
+                  if (_searchQuery.isNotEmpty) {
+                    filteredData =
+                        snapshot.data!.where((item) {
+                          var admission = item['tblAdmission'];
+                          var name =
+                              admission['name']?.toString().toLowerCase() ?? '';
+                          var regno =
+                              admission['regno']?.toString().toLowerCase() ??
+                              '';
+                          var query = _searchQuery.toLowerCase();
+                          return name.contains(query) || regno.contains(query);
+                        }).toList();
+                  }
+                  var total = filteredData!.length;
                   if (label == 'Completed') {
                     var completed = 0;
-                    for (var event in snapshot.data!) {
+                    for (var event in filteredData!) {
                       if (event!["tblPhoto"] != null) {
                         completed++;
                       }
@@ -102,7 +117,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                     total = completed;
                   } else if (label == 'Pending') {
                     var pending = 0;
-                    for (var event in snapshot.data!) {
+                    for (var event in filteredData) {
                       if (event!["tblPhoto"] == null) {
                         pending++;
                       }

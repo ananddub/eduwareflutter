@@ -36,7 +36,7 @@ export class AdmisionController {
             data: await this.admisionService.findAll({
                 cl,
                 start,
-                section
+                section,
                 end,
                 roll,
                 session,
