@@ -1,6 +1,4 @@
 import 'dotenv/config';
-import mysql from 'mysql2/promise';
-
 import { drizzle } from 'drizzle-orm/mysql2';
 import { DRIZZLE_CLIENT } from 'src/constant';
 

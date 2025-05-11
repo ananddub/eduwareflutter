@@ -13,6 +13,13 @@ import {
 } from 'drizzle-orm/mysql-core';
 import { sql } from 'drizzle-orm';
 
+export const tblAuth = mysqlTable('tbl_auth', {
+    phoneNo: varchar('phone', { length: 15 }).notNull().unique(),
+    database: varchar('database', { length: 100 }).notNull(),
+    password: varchar('password', { length: 100 }).notNull(),
+    role: varchar('role', { length: 100 }).notNull().default('user'),
+});
+
 export const tblPhoto = mysqlTable('tbl_photo', {
     admno: varchar('admno', { length: 36 }).notNull().unique(),
     name: varchar('name', { length: 255 }).notNull(),

@@ -5,13 +5,18 @@ import {
     Body,
     Patch,
     Param,
+    Res,
     Delete,
     Query,
+    UseGuards,
 } from '@nestjs/common';
 import { AdmisionService } from './admision.service';
 import { CreateAdmisionDto } from './dto/create-admision.dto';
 import { UpdateAdmisionDto } from './dto/update-admision.dto';
+import { AuthGuard } from '@nestjs/passport';
+import { JwtAuthGuard } from 'src/jwt/custom.guard';
 
+// @UseGuards(JwtAuthGuard)
 @Controller('admision')
 export class AdmisionController {
     constructor(private readonly admisionService: AdmisionService) {}

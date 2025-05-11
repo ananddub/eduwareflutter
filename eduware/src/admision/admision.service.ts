@@ -4,7 +4,7 @@ import { UpdateAdmisionDto } from './dto/update-admision.dto';
 import { DRIZZLE_CLIENT } from 'src/constant';
 import { AnyMySql2Connection, MySql2Database } from 'drizzle-orm/mysql2';
 import { tblPhoto, tblAdmission } from 'src/db/schema';
-import { and, count, eq, gte, or } from 'drizzle-orm';
+import { and, count, eq, gte, isNotNull, not, or } from 'drizzle-orm';
 
 @Injectable()
 export class AdmisionService {
@@ -19,6 +19,42 @@ export class AdmisionService {
             'This action adds a new admision' +
             JSON.stringify(createAdmisionDto)
         );
+    }
+
+    async test({
+        cl = 'X',
+        roll = -1,
+        section = 'A',
+        session = '2024-2025',
+    }: {
+        cl: string;
+        start: number;
+        section: string;
+        end: number;
+        roll: number;
+        session: string;
+    }) {
+        return (
+            await this.db
+                .select()
+                .from(tblAdmission)
+                .leftJoin(tblPhoto, eq(tblAdmission.admno, tblPhoto.admno))
+                .where(
+                    and(
+                        eq(tblAdmission.class, cl),
+                        eq(tblAdmission.session, session),
+                        gte(tblAdmission.roll, roll),
+                        eq(tblAdmission.section, section),
+                        eq(tblPhoto.admno, tblAdmission.admno),
+                    ),
+                )
+                .orderBy(tblAdmission.roll)
+        ).map((data) => {
+            return {
+                ...data.tbl_admission,
+                ...data.tbl_photo,
+            };
+        });
     }
 
     async findAll({

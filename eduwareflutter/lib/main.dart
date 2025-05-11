@@ -1,19 +1,26 @@
 import 'package:eduwareflutter/pages/photo/photo.dart';
 import 'package:eduwareflutter/pages/routes.dart';
+import 'package:eduwareflutter/storage/user.cubit.dart';
+import 'package:eduwareflutter/storage/user.secure.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(const MyApp());
+  final storage = SecureStorageService();
+  runApp(
+    MultiBlocProvider(
+      providers: [BlocProvider<UserCubit>(create: (_) => UserCubit(storage))],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Flutter Demo',
+      title: 'Eduware Demo',
 
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

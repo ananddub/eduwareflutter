@@ -12,6 +12,7 @@ import {
     Query,
     NotFoundException,
     Headers,
+    UseGuards,
 } from '@nestjs/common';
 import { PhotographyService } from './photography.service';
 import { UpdatePhotographyDto } from './dto/update-photography.dto';
@@ -19,7 +20,10 @@ import { FilesInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
 import { extname } from 'path';
 import { STATUS_CODES } from 'http';
+import { AuthGuard } from '@nestjs/passport';
+import { JwtAuthGuard } from 'src/jwt/custom.guard';
 
+// @UseGuards(JwtAuthGuard)
 @Controller('photo')
 export class PhotographyController {
     constructor(private readonly photographyService: PhotographyService) {}

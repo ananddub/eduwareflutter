@@ -1,25 +1,31 @@
-import { Inject, Injectable } from '@nestjs/common';
+import {
+    BadRequestException,
+    Inject,
+    Injectable,
+    InternalServerErrorException,
+    NotFoundException,
+} from '@nestjs/common';
 import { CreatePhotographyDto } from './dto/create-photography.dto';
 import { UpdatePhotographyDto } from './dto/update-photography.dto';
-import { DRIZZLE_CLIENT } from 'src/constant';
+import { DRIZZLE_CLIENT, EXCEL_CREATE } from 'src/constant';
 import { tblPhoto, tblAdmission } from 'src/db/schema';
 import { AnyMySql2Connection, MySql2Database } from 'drizzle-orm/mysql2';
 import { and, eq, gte } from 'drizzle-orm';
 import { Subject, Observable } from 'rxjs';
-import { HttpException, HttpStatus } from '@nestjs/common';
+import { EventEmitter2 } from '@nestjs/event-emitter';
 
 @Injectable()
 export class PhotographyService {
     private eventSubject = new Subject<any>();
 
     constructor(
+        private eventEmitter: EventEmitter2,
         @Inject(DRIZZLE_CLIENT)
         private db: MySql2Database<Record<string, never>> & {
             $client: AnyMySql2Connection;
         },
     ) {}
 
-    // Method to return the Observable stream of events
     observeEvents(): Observable<any> {
         return this.eventSubject.asObservable();
     }
@@ -30,17 +36,13 @@ export class PhotographyService {
     ) {
         try {
             if (!file) {
-                throw new HttpException(
-                    'File is required.',
-                    HttpStatus.BAD_REQUEST,
-                );
+                throw new BadRequestException('File is required.');
             }
 
             const { admno } = createPhotographyDto;
             if (!admno) {
-                throw new HttpException(
+                throw new BadRequestException(
                     'Admission number (admno) is required.',
-                    HttpStatus.BAD_REQUEST,
                 );
             }
             const dup = await this.db
@@ -86,15 +88,28 @@ export class PhotographyService {
                     },
                 });
             }
+            const data = await this.db
+                .select({
+                    class: tblAdmission.class,
+                    section: tblAdmission.section,
+                })
+                .from(tblAdmission)
+                .where(eq(tblPhoto.admno, admno))
+                .limit(1);
+            if (data.length > 0) {
+                this.eventEmitter.emit(EXCEL_CREATE, {
+                    class: data[0].class,
+                    section: data[0].section,
+                });
+            }
 
             return {
                 message: 'Photography created successfully.',
                 data: newPhotography,
             };
         } catch (error) {
-            throw new HttpException(
+            throw new InternalServerErrorException(
                 error.message || 'Failed to create photography.',
-                HttpStatus.INTERNAL_SERVER_ERROR,
             );
         }
     }
@@ -127,9 +142,8 @@ export class PhotographyService {
                 );
             return value;
         } catch {
-            throw new HttpException(
+            throw new InternalServerErrorException(
                 'Failed to fetch photography records.',
-                HttpStatus.INTERNAL_SERVER_ERROR,
             );
         }
     }
@@ -137,10 +151,7 @@ export class PhotographyService {
     async findOne(id: string, session: string = '2022-2025') {
         try {
             if (!id) {
-                throw new HttpException(
-                    'ID parameter is required.',
-                    HttpStatus.BAD_REQUEST,
-                );
+                throw new BadRequestException('ID parameter is required.');
             }
             const photo = await this.db
                 .select()
@@ -154,16 +165,12 @@ export class PhotographyService {
                 );
 
             if (!photo || photo.length === 0) {
-                throw new HttpException(
-                    'Photography not found.',
-                    HttpStatus.NOT_FOUND,
-                );
+                throw new NotFoundException('Photography not found.');
             }
             return { data: photo };
         } catch (error) {
-            throw new HttpException(
+            throw new InternalServerErrorException(
                 error.message || 'Failed to fetch photography.',
-                HttpStatus.INTERNAL_SERVER_ERROR,
             );
         }
     }
@@ -175,17 +182,11 @@ export class PhotographyService {
     ) {
         try {
             if (!id) {
-                throw new HttpException(
-                    'ID parameter is required.',
-                    HttpStatus.BAD_REQUEST,
-                );
+                throw new BadRequestException('ID parameter is required.');
             }
 
             if (!file) {
-                throw new HttpException(
-                    'File is required.',
-                    HttpStatus.BAD_REQUEST,
-                );
+                throw new BadRequestException('File is required.');
             }
 
             const updatedPhotography = await this.db
@@ -199,9 +200,8 @@ export class PhotographyService {
                 .where(eq(tblPhoto.admno, id));
 
             if (!updatedPhotography) {
-                throw new HttpException(
+                throw new NotFoundException(
                     'Photography not found or update failed.',
-                    HttpStatus.NOT_FOUND,
                 );
             }
 
@@ -216,9 +216,8 @@ export class PhotographyService {
                 data: updatedPhotography,
             };
         } catch (error) {
-            throw new HttpException(
+            throw new InternalServerErrorException(
                 error.message || 'Failed to update photography.',
-                HttpStatus.INTERNAL_SERVER_ERROR,
             );
         }
     }
@@ -226,10 +225,7 @@ export class PhotographyService {
     async remove(id: string) {
         try {
             if (!id) {
-                throw new HttpException(
-                    'ID parameter is required.',
-                    HttpStatus.BAD_REQUEST,
-                );
+                throw new BadRequestException('ID parameter is required.');
             }
 
             const deletedPhotography = await this.db
@@ -237,13 +233,11 @@ export class PhotographyService {
                 .where(eq(tblPhoto.admno, id));
 
             if (!deletedPhotography) {
-                throw new HttpException(
+                throw new NotFoundException(
                     'Photography not found or deletion failed.',
-                    HttpStatus.NOT_FOUND,
                 );
             }
 
-            // Emit an event after successful deletion
             this.eventSubject.next({
                 action: 'deleted',
                 data: { admno: id },
@@ -253,9 +247,8 @@ export class PhotographyService {
                 message: 'Photography deleted successfully.',
             };
         } catch (error) {
-            throw new HttpException(
+            throw new InternalServerErrorException(
                 error.message || 'Failed to delete photography.',
-                HttpStatus.INTERNAL_SERVER_ERROR,
             );
         }
     }

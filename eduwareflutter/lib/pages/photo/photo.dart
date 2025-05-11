@@ -18,6 +18,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
   final TextEditingController _searchController = TextEditingController();
   String _searchQuery = '';
   String selectedClass = 'X';
+  String selectedPhotoStatus = 'All';
   String selectedSection = 'A';
   List<String> classOptions = [
     'I',
@@ -419,6 +420,57 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                               ),
                             ],
                           ),
+                          Row(
+                            children: [
+                              Radio<String>(
+                                value: 'All',
+                                groupValue: selectedPhotoStatus,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectedPhotoStatus = value!;
+                                  });
+                                },
+                                activeColor: Colors.indigo[700],
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                              ),
+                              const Text('All', style: TextStyle(fontSize: 13)),
+                              const SizedBox(width: 16),
+                              Radio<String>(
+                                value: 'Done',
+                                groupValue: selectedPhotoStatus,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectedPhotoStatus = value!;
+                                  });
+                                },
+                                activeColor: Colors.indigo[700],
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                              ),
+                              const Text(
+                                'Done',
+                                style: TextStyle(fontSize: 13),
+                              ),
+                              const SizedBox(width: 16),
+                              Radio<String>(
+                                value: 'Not Done',
+                                groupValue: selectedPhotoStatus,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectedPhotoStatus = value!;
+                                  });
+                                },
+                                activeColor: Colors.indigo[700],
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                              ),
+                              const Text(
+                                'Not Done',
+                                style: TextStyle(fontSize: 13),
+                              ),
+                            ],
+                          ),
                           const SizedBox(height: 12),
                           SizedBox(
                             width: double.infinity,
@@ -558,7 +610,18 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                       ),
                     );
                   }
-
+                  if (selectedPhotoStatus != 'All') {
+                    filteredData =
+                        filteredData.where((item) {
+                          bool hasPhoto = item['tblPhoto'] != null;
+                          if (selectedPhotoStatus == 'Done') {
+                            return hasPhoto;
+                          } else {
+                            // Not Done
+                            return !hasPhoto;
+                          }
+                        }).toList();
+                  }
                   return SliverList(
                     delegate: SliverChildBuilderDelegate((context, index) {
                       var data = filteredData[index]['tblAdmission'];
