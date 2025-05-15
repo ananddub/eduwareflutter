@@ -9,7 +9,7 @@ import 'package:go_router/go_router.dart';
 
 class AppRouter {
   GoRouter router = GoRouter(
-    initialLocation: ApiRoute.splash,
+    initialLocation: ApiRoute.photography,
     routes: [
       GoRoute(
         path: ApiRoute.splash,
