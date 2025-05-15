@@ -17,6 +17,7 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _schoolCodeController = TextEditingController();
   bool _isLoading = false;
   bool _obscurePassword = true;
   bool _rememberMe = false;
@@ -209,21 +210,78 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
 
-                      // School Dropdown
+                      // // School Dropdown
+                      // Container(
+                      //   decoration: BoxDecoration(
+                      //     color: Colors.white,
+                      //     borderRadius: BorderRadius.circular(12),
+                      //     border: Border.all(color: Colors.grey.shade200),
+                      //   ),
+                      //   child: DropdownButtonFormField<String>(
+                      //     value: _selectedSchool,
+                      //     decoration: InputDecoration(
+                      //       prefixIcon: Icon(
+                      //         Icons.school_outlined,
+                      //         color: Colors.grey.shade600,
+                      //       ),
+                      //       border: InputBorder.none,
+                      //       focusedBorder: OutlineInputBorder(
+                      //         borderSide: BorderSide(
+                      //           color: Colors.indigo,
+                      //           width: 2.0,
+                      //         ),
+                      //         borderRadius: BorderRadius.all(
+                      //           Radius.circular(20),
+                      //         ),
+                      //       ),
+                      //       contentPadding: EdgeInsets.symmetric(
+                      //         horizontal: 16,
+                      //         vertical: 16,
+                      //       ),
+                      //     ),
+                      //     items:
+                      //         _schools.map((String school) {
+                      //           return DropdownMenuItem<String>(
+                      //             value: school,
+                      //             child: Text(school),
+                      //           );
+                      //         }).toList(),
+                      //     onChanged: (String? newValue) {
+                      //       setState(() {
+                      //         _selectedSchool = newValue!;
+                      //       });
+                      //     },
+                      //     validator: (value) {
+                      //       if (value == null || value.isEmpty) {
+                      //         return "Please select a school";
+                      //       }
+                      //       return null;
+                      //     },
+                      //     dropdownColor: Colors.white,
+                      //     icon: Icon(
+                      //       Icons.arrow_drop_down,
+                      //       color: Colors.grey.shade600,
+                      //     ),
+                      //   ),
+                      // ),
+
+                      // const SizedBox(height: 20),
+
+                      // School Code TextField
                       Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: Colors.grey.shade200),
+                          border: Border.all(color: Colors.white),
                         ),
-                        child: DropdownButtonFormField<String>(
-                          value: _selectedSchool,
+                        child: TextFormField(
+                          controller: _schoolCodeController,
                           decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.school_outlined,
                               color: Colors.grey.shade600,
                             ),
-                            border: InputBorder.none,
+                            hintText: 'Enter School Code',
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: Colors.indigo,
@@ -233,39 +291,23 @@ class _LoginPageState extends State<LoginPage> {
                                 Radius.circular(20),
                               ),
                             ),
+
+                            border: InputBorder.none,
+                            hintStyle: TextStyle(color: Colors.grey.shade400),
                             contentPadding: EdgeInsets.symmetric(
                               horizontal: 16,
                               vertical: 16,
                             ),
                           ),
-                          items:
-                              _schools.map((String school) {
-                                return DropdownMenuItem<String>(
-                                  value: school,
-                                  child: Text(school),
-                                );
-                              }).toList(),
-                          onChanged: (String? newValue) {
-                            setState(() {
-                              _selectedSchool = newValue!;
-                            });
-                          },
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return "Please select a school";
+                              return 'Please enter school code';
                             }
                             return null;
                           },
-                          dropdownColor: Colors.white,
-                          icon: Icon(
-                            Icons.arrow_drop_down,
-                            color: Colors.grey.shade600,
-                          ),
                         ),
                       ),
-
-                      const SizedBox(height: 20),
-
+                      SizedBox(height: 20),
                       // Phone Field Label
                       const Padding(
                         padding: EdgeInsets.only(left: 12, bottom: 8),
@@ -284,7 +326,7 @@ class _LoginPageState extends State<LoginPage> {
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: Colors.grey.shade200),
+                          border: Border.all(color: Colors.white),
                         ),
                         child: TextFormField(
                           controller: _phoneController,

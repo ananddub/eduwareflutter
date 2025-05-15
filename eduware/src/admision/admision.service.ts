@@ -5,6 +5,7 @@ import { DRIZZLE_CLIENT } from 'src/constant';
 import { AnyMySql2Connection, MySql2Database } from 'drizzle-orm/mysql2';
 import { tblPhoto, tblAdmission } from 'src/db/schema';
 import { and, count, eq, gte, isNotNull, not, or } from 'drizzle-orm';
+import { getYearRange } from 'src/date.service';
 
 @Injectable()
 export class AdmisionService {
@@ -25,7 +26,7 @@ export class AdmisionService {
         cl = 'X',
         roll = -1,
         section = 'A',
-        session = '2024-2025',
+        session = getYearRange(),
     }: {
         cl: string;
         start: number;
@@ -60,8 +61,8 @@ export class AdmisionService {
     async findAll({
         cl = 'X',
         roll = -1,
-        section = 'A',
-        session = '2024-2025',
+        section = 'All',
+        session = getYearRange(),
     }: {
         cl: string;
         start: number;
@@ -80,12 +81,15 @@ export class AdmisionService {
             .where(
                 and(
                     eq(tblAdmission.class, cl),
-                    eq(tblAdmission.session, session),
                     gte(tblAdmission.roll, roll),
-                    eq(tblAdmission.section, section),
+                    eq(tblAdmission.session, session),
+
+                    section == 'All'
+                        ? gte(tblAdmission.roll, roll)
+                        : eq(tblAdmission.section, section),
                 ),
             )
-            .orderBy(tblAdmission.roll);
+            .orderBy(tblAdmission.roll, tblAdmission.section);
     }
 
     findOne(id: string) {

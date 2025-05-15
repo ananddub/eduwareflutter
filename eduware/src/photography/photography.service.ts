@@ -13,6 +13,7 @@ import { AnyMySql2Connection, MySql2Database } from 'drizzle-orm/mysql2';
 import { and, eq, gte } from 'drizzle-orm';
 import { Subject, Observable } from 'rxjs';
 import { EventEmitter2 } from '@nestjs/event-emitter';
+import { getYearRange } from 'src/date.service';
 
 @Injectable()
 export class PhotographyService {
@@ -118,7 +119,7 @@ export class PhotographyService {
         cl = 'X',
         roll = -1,
         section = '',
-        session = '2024-2025',
+        session = getYearRange(),
     }: {
         cl: string;
         roll: number;

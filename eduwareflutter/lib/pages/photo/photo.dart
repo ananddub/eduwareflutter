@@ -1,3 +1,4 @@
+import 'package:croppy/croppy.dart';
 import 'package:eduwareflutter/constant/routes.dart';
 import 'package:eduwareflutter/constant/server.dart';
 import 'package:featurehub_sse_client/featurehub_sse_client.dart';
@@ -14,12 +15,16 @@ class PhotoGraphy extends StatefulWidget {
 // nest
 class _PhotoGraphyState extends State<PhotoGraphy> {
   late Future<List> data;
+  bool apply = true;
+  bool pending = true;
+  bool hardRefresh = false;
+  String prevSelectedPhotoStatus = 'All';
   final ScrollController _scrollController = ScrollController();
   final TextEditingController _searchController = TextEditingController();
   String _searchQuery = '';
   String selectedClass = 'X';
   String selectedPhotoStatus = 'All';
-  String selectedSection = 'A';
+  String selectedSection = 'All';
   List<String> classOptions = [
     'I',
     'II',
@@ -38,12 +43,61 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
   }
 
   Future<void> event() async {
+    bool flag = false;
     EventSource eventSource = await EventSource.connect("$BaseUrl/photo/event");
     eventSource.listen((event) {
       debugPrint('event data ${event.data}');
+      if (!flag) {
+        flag = true;
+        return;
+      }
       setState(() {
         getData();
       });
+    });
+  }
+
+  void onOptioniChanged(value) {
+    debugPrint("value $value");
+    setState(() {
+      pending = true;
+      selectedPhotoStatus = value;
+    });
+  }
+
+  void onQueryChanged(value) {
+    setState(() {
+      pending = true;
+      hardRefresh = true;
+      _searchQuery = value;
+    });
+  }
+
+  void onSectionChanged(value) {
+    setState(() {
+      pending = true;
+      hardRefresh = true;
+      selectedSection = value;
+    });
+  }
+
+  void onClassChanged(value) {
+    setState(() {
+      pending = true;
+      hardRefresh = true;
+      selectedClass = value;
+    });
+  }
+
+  void onApplyFilter() {
+    setState(() {
+      pending = false;
+      apply = false;
+      prevSelectedPhotoStatus = selectedPhotoStatus;
+      if (hardRefresh) {
+        getData();
+        hardRefresh = false;
+      }
     });
   }
 
@@ -168,16 +222,16 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 spacing: 10,
                 children: [
-                  _buildStatChip("Total", "1000", Colors.blue, Icons.people),
+                  _buildStatChip("Total", "0", Colors.blue, Icons.people),
                   _buildStatChip(
                     "Completed",
-                    "59",
+                    "0",
                     Colors.green,
                     Icons.check_circle,
                   ),
                   _buildStatChip(
                     "Pending",
-                    "94",
+                    "0",
                     Colors.orange,
                     Icons.pending_actions,
                   ),
@@ -289,11 +343,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
                               ),
-                              onChanged: (value) {
-                                setState(() {
-                                  _searchQuery = value;
-                                });
-                              },
+                              onChanged: onQueryChanged,
                             ),
                           ),
                           const SizedBox(height: 12),
@@ -346,11 +396,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                                                     ),
                                                   )
                                                   .toList(),
-                                          onChanged: (value) {
-                                            setState(() {
-                                              selectedClass = value!;
-                                            });
-                                          },
+                                          onChanged: onClassChanged,
                                         ),
                                       ),
                                     ),
@@ -392,7 +438,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                                             size: 20,
                                           ),
                                           items:
-                                              ['A', 'B', 'C', 'D']
+                                              ['All', 'A', 'B', 'C', 'D']
                                                   .map(
                                                     (section) =>
                                                         DropdownMenuItem(
@@ -407,11 +453,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                                                         ),
                                                   )
                                                   .toList(),
-                                          onChanged: (value) {
-                                            setState(() {
-                                              selectedSection = value!;
-                                            });
-                                          },
+                                          onChanged: onSectionChanged,
                                         ),
                                       ),
                                     ),
@@ -425,11 +467,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                               Radio<String>(
                                 value: 'All',
                                 groupValue: selectedPhotoStatus,
-                                onChanged: (value) {
-                                  setState(() {
-                                    selectedPhotoStatus = value!;
-                                  });
-                                },
+                                onChanged: onOptioniChanged,
                                 activeColor: Colors.indigo[700],
                                 materialTapTargetSize:
                                     MaterialTapTargetSize.shrinkWrap,
@@ -439,11 +477,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                               Radio<String>(
                                 value: 'Done',
                                 groupValue: selectedPhotoStatus,
-                                onChanged: (value) {
-                                  setState(() {
-                                    selectedPhotoStatus = value!;
-                                  });
-                                },
+                                onChanged: onOptioniChanged,
                                 activeColor: Colors.indigo[700],
                                 materialTapTargetSize:
                                     MaterialTapTargetSize.shrinkWrap,
@@ -456,11 +490,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                               Radio<String>(
                                 value: 'Not Done',
                                 groupValue: selectedPhotoStatus,
-                                onChanged: (value) {
-                                  setState(() {
-                                    selectedPhotoStatus = value!;
-                                  });
-                                },
+                                onChanged: onOptioniChanged,
                                 activeColor: Colors.indigo[700],
                                 materialTapTargetSize:
                                     MaterialTapTargetSize.shrinkWrap,
@@ -475,11 +505,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                           SizedBox(
                             width: double.infinity,
                             child: ElevatedButton(
-                              onPressed: () {
-                                setState(() {
-                                  getData();
-                                });
-                              },
+                              onPressed: onApplyFilter,
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.indigo,
                                 foregroundColor: Colors.white,
@@ -514,6 +540,9 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
             sliver: FutureBuilder<List>(
               future: data,
               builder: (context, snapshot) {
+                if (apply) {
+                  return SliverFillRemaining(child: Container());
+                }
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const SliverFillRemaining(
                     child: Center(
@@ -587,6 +616,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
 
                   if (filteredData.isEmpty) {
                     return SliverFillRemaining(
+                      hasScrollBody: false,
                       child: Center(
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -610,14 +640,13 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                       ),
                     );
                   }
-                  if (selectedPhotoStatus != 'All') {
+                  if (prevSelectedPhotoStatus != 'All') {
                     filteredData =
                         filteredData.where((item) {
                           bool hasPhoto = item['tblPhoto'] != null;
-                          if (selectedPhotoStatus == 'Done') {
+                          if (prevSelectedPhotoStatus == 'Done') {
                             return hasPhoto;
                           } else {
-                            // Not Done
                             return !hasPhoto;
                           }
                         }).toList();
@@ -625,6 +654,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                   return SliverList(
                     delegate: SliverChildBuilderDelegate((context, index) {
                       var data = filteredData[index]['tblAdmission'];
+                      var value = filteredData[index];
                       return Container(
                         margin: const EdgeInsets.only(bottom: 1),
                         decoration: BoxDecoration(
@@ -644,7 +674,7 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                           borderRadius: BorderRadius.circular(16),
                           child: InkWell(
                             onTap: () {
-                              navigateToAdmissionDetails(snapshot.data![index]);
+                              navigateToAdmissionDetails(value);
                             },
                             borderRadius: BorderRadius.circular(0),
                             child: Padding(
@@ -854,9 +884,9 @@ class _PhotoGraphyState extends State<PhotoGraphy> {
                     }, childCount: filteredData.length),
                   );
                 }
-
                 // Fallback state if data is empty
                 return const SliverFillRemaining(
+                  hasScrollBody: false,
                   child: Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
