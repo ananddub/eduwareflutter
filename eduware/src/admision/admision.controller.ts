@@ -29,7 +29,7 @@ export class AdmisionController {
 
     @Get()
     async findAll(
-        @Query('class') cl: string = 'X',
+        @Query('class') cl: string = 'All',
         @Query('section') section: string = 'All',
         @Query('session') session: string = getYearRange(),
         @Query('start') start: number = 0,
