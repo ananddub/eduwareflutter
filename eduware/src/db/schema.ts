@@ -1,5 +1,7 @@
 import {
     mysqlTable,
+    mysqlSchema,
+    AnyMySqlColumn,
     varchar,
     int,
     date,
@@ -1156,8 +1158,7 @@ export const tblStudentreport = mysqlTable('tbl_studentreport', {
 });
 
 export const tblSwitches = mysqlTable('tbl_switches', {
-    frmmod: varchar({ length: 20 }).notNull(),
-    opt: varchar({ length: 20 }).notNull(),
+    switch: varchar({ length: 50 }).notNull(),
     status: int().notNull(),
 });
 

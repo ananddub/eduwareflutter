@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { PhotographyService } from './photography.service';
 import { PhotographyController } from './photography.controller';
 import { MulterModule } from '@nestjs/platform-express';
-import { DRIZZLE_CONNECTION } from 'src/drizzles/drizzle.module';
+import { DRIZZLE_CONNECTION } from 'src/drizzle/drizzle.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { JwtModule } from '@nestjs/jwt';
 

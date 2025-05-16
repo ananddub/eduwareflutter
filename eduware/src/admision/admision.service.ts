@@ -59,7 +59,7 @@ export class AdmisionService {
     }
 
     async findAll({
-        cl = 'X',
+        cl = 'All',
         roll = -1,
         section = 'All',
         session = getYearRange(),
@@ -80,16 +80,22 @@ export class AdmisionService {
             .leftJoin(tblPhoto, eq(tblAdmission.admno, tblPhoto.admno))
             .where(
                 and(
-                    eq(tblAdmission.class, cl),
+                    cl === 'All'
+                        ? gte(tblAdmission.roll, roll)
+                        : eq(tblAdmission.class, cl),
                     gte(tblAdmission.roll, roll),
                     eq(tblAdmission.session, session),
 
-                    section == 'All'
+                    section === 'All' || cl === 'All'
                         ? gte(tblAdmission.roll, roll)
                         : eq(tblAdmission.section, section),
                 ),
             )
-            .orderBy(tblAdmission.roll, tblAdmission.section);
+            .orderBy(
+                tblAdmission.class,
+                tblAdmission.roll,
+                tblAdmission.section,
+            );
     }
 
     findOne(id: string) {
